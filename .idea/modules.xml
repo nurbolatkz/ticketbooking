@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fornodemodules.iml" filepath="$PROJECT_DIR$/.idea/fornodemodules.iml" />
+        <module fileurl="file://$PROJECT_DIR$/.idea/webappbot.iml" filepath="$PROJECT_DIR$/.idea/webappbot.iml" />
     </modules>
   </component>
 </project>
