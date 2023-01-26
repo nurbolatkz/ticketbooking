@@ -1,11 +1,21 @@
-import React from 'react';
-import CinemaCard from "./components/CinemaCard";
+import React, {useState} from 'react';
+import CinemaCardList from "./components/CinemaCardList";
 import  './styles/App.css'
 
 
 function App() {
+
+    const [cards, SetCards] = useState([
+      {id:1, address: 'KINO1', img_src: 'logo.jpg'},
+      {id:2, address: 'KINO1', img_src: 'logo.jpg'},
+      {id:3, address: 'KINO1', img_src: 'logo.jpg'},
+      {id:4, address: 'KINO1', img_src: 'logo.jpg'}
+    ])
+
+
+
   return (
-        <CinemaCard cinema_card = {{address: "Kino1", img_src: 'logo.jpg'}}/>
+      <CinemaCardList cards ={cards} ></CinemaCardList>
   );
 }
 
