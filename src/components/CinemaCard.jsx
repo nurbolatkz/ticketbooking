@@ -5,9 +5,12 @@ const CinemaCard = (props) => {
         <div className='card'>
             <div className='card-item'>
                 <img src={props.cinema_card.img_src} alt="" className='card-img'/>
-                <h5 className='card_title'>{props.cinema_card.address}</h5>
-                <button>Выбрать</button>
-
+                <div className='card-body'>
+                    <h5 className='card-title'>{props.cinema_card.address}</h5>
+                    <div className='card-footer'>
+                        <button>Выбрать</button>
+                    </div>
+                </div>
             </div>
         </div>
 

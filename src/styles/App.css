@@ -35,32 +35,50 @@
 
 }
 
-
-.card-item {
+.card-body {
     width: 100%;
     padding: 0;
-    margin:0;
+    margin-top: 44px;
     text-align: center;
 }
 
-.card-title {
+.card-title  {
     position: relative;
-
-
-    margin: 23.9% 68.9% 41.49% 41.43%;
-
+    margin: 49px 131px 29px 131px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
-
     line-height: 31px;
-
-
     height: 31px;
     width: 76px;
     border-radius: 0px;
-
     color: #000000;
+
+}
+
+.card-footer {
+    height: 67px;
+    width: 210px;
+    margin-left: 64px;
+    margin-bottom: 23px;
+    margin-right:64px;
+    background: #E3231E;
+    border-radius: 16px;
+    padding:14px 38px;
+}
+.card-footer button {
+    height: 38px;
+    width: 134px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31.2958px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: 0 transparent;
+
 
 }
