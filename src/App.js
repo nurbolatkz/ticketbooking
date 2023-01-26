@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import CinemaCardList from "./components/CinemaCardList";
+import DateOption from "./components/DateOption";
 import  './styles/App.css'
 
 
@@ -15,7 +16,11 @@ function App() {
 
 
   return (
-      <CinemaCardList cards ={cards} ></CinemaCardList>
+      <div>
+          <CinemaCardList cards ={cards} ></CinemaCardList>
+          <DateOption></DateOption>
+      </div>
+
   );
 }
 
