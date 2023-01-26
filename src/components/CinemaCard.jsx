@@ -13,7 +13,6 @@ const CinemaCard = (props) => {
                 </div>
             </div>
         </div>
-
     );
 };
 
