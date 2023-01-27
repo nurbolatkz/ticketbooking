@@ -189,6 +189,7 @@
     border-radius: 0px;
     margin-left: 5%;
     margin-bottom: 15px;
+    z-index: 0;
 
 }
 
@@ -216,4 +217,38 @@
     text-align: center;
     color: #FFFFFF;
     border: transparent;
+}
+
+.snack-card .counter {
+    float: right;
+    height: 61px;
+    width: 61px;
+    border-radius: 0px;
+    padding: 20px;
+    border-radius: 50%;
+    background: #FFB800;
+    text-align: center;
+    z-index: 5;
+    margin-top: 5%;
+    margin-right: 5%;
+    visibility: hidden;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+.btn-container button {
+    height: 67px;
+    width: 75px;
+    border-radius: 16px;
+}
+
+#decrement_btn {
+    background: #E3231E;
+}
+
+#increment_btn {
+    background: #FFB800;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import SnackItem from "./SnackItem.jsx";
 
 
-const SnackList = ({snack_cards}) => {
+const SnackList = ({snack_cards, setVisibilityCard, increment, decrement}) => {
     const arrangeByRow = () => {
 
         let arranged_snack_cards = [];
@@ -31,14 +31,26 @@ const SnackList = ({snack_cards}) => {
         <div className='snack-container'>
             {snackMenuArrangedByRow.map((row) =>
                 <div className = 'row'>
-                    <SnackItem snack_card={row[0]}/>
+                    <SnackItem id={'snack-card' + row[0].id} snack_card={row[0]}
+                               setVisibility={setVisibilityCard}
+                               increment = {increment}
+                               decrement = {decrement}
+                    />
 
                     {row[1] &&
-                        <SnackItem snack_card={row[1]}/>
+                        <SnackItem id={'snack-card' + row[1].id} snack_card={row[1]}
+                                   setVisibility={setVisibilityCard}
+                                   increment = {increment}
+                                   decrement = {decrement}
+                        />
                     }
 
                     {row[2] &&
-                        <SnackItem snack_card={row[2]}/>
+                        <SnackItem id={'snack-card' + row[2].id} snack_card={row[2]}
+                                   setVisibility={setVisibilityCard}
+                                   increment = {increment}
+                                   decrement = {decrement}
+                        />
                     }
                 </div>
             )}
