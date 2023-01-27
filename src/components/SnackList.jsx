@@ -28,7 +28,7 @@ const SnackList = ({snack_cards}) => {
     const snackMenuArrangedByRow =  arrangeByRow();
 
     return (
-        <div className='snack_table'>
+        <div className='snack-container'>
             {snackMenuArrangedByRow.map((row) =>
                 <div className = 'row'>
                     <SnackItem snack_card={row[0]}/>

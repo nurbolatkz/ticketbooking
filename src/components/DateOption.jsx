@@ -2,7 +2,7 @@ import React from 'react';
 
 const DateOption = () => {
     return (
-        <div className='suggest-date-block'>
+        <div className='suggest-date-container'>
             <h4 className='suggest-title'> ВЫБОР ДАТЫ</h4>
             <div>
                 <div className='date-block' id='today'>
