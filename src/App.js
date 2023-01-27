@@ -17,10 +17,11 @@ function App() {
     ])
 
     const [snacks, setSnacks] = useState([
-        {id:1, snack_name: 'Coca-Cola', img_src: 'popcorn.jpg'},
-        {id:2, snack_name: 'Coca-Cola', img_src: 'popcorn.jpg'},
-        {id:3, snack_name: 'Coca-Cola', img_src: 'popcorn.jpg'},
-        {id:4, snack_name: 'Coca-Cola', img_src: 'popcorn.jpg'},
+        {id:1, snack_name: 'Popcorn', img_src: 'popcorn.jpg'},
+        {id:2, snack_name: 'Coca-Cola', img_src: 'cola.jpg'},
+        {id:3, snack_name: 'Fanta', img_src: 'fanta.jpg'},
+        {id:4, snack_name: 'Fuse tea', img_src: 'fusetea.jpg'},
+        {id:5, snack_name: 'Tassay', img_src: 'tassay.jpg'},
 
     ])
 
