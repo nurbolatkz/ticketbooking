@@ -12,19 +12,26 @@ const CinemaCardlist = ({cards, remove}) => {
     }
 
     let cardFilterByTwoElements = [];
+    let counter = 0;
+    let row  = [];
 
     for(let i = 0; i < cards.length; i++){
-       let row = []
-        for(let j = 0; j < 2; j++){
-            if(cards[i]){
-                row.push(cards[i]);
-            }
 
+        if(counter === 2){
+            cardFilterByTwoElements.push(row);
+            counter = 0;
+            row = [];
+        };
+        row.push(cards[i]);
+
+        if(i === cards.length - 1){
+            cardFilterByTwoElements.push(row);
         }
-        cardFilterByTwoElements.push(row);
-        row = []
+        counter++;
 
-     }
+    }
+
+    console.log(cardFilterByTwoElements);
 
 
     return (
@@ -32,7 +39,10 @@ const CinemaCardlist = ({cards, remove}) => {
             {cardFilterByTwoElements.map((card) =>
                     <div className = 'row'>
                           <CinemaCard cinema_card ={card[0]} />
-                           <CinemaCard cinema_card ={card[1]} />
+                        {card[1] &&
+                            <CinemaCard cinema_card ={card[1]} />
+                        }
+
                     </div>
             )}
         </div>
