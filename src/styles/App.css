@@ -212,7 +212,7 @@ body {
     }
 
     .row {
-        padding-left: 35px;
+        padding-left: 50px;
     }
 
     .container h1 {
@@ -233,6 +233,7 @@ body {
     .card {
         background: #F1F1F1;
         height: 300px;
+        width: 80%;
         text-align: center;
         background-color: #f1f1f1;
         margin-top: 30px;
