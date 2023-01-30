@@ -63,13 +63,13 @@ function App() {
     return (
       <div>
           <CinemaCardList cards ={cards} ></CinemaCardList>
-          <DateOption></DateOption>
+      </div>
+        /*<DateOption></DateOption>
           <SnackList snack_cards={snacks}
                      setVisibilityCard={setVisibilitySnackCard}
                      increment = {handleIncrement}
                      decrement ={handleDecrement}
-          ></SnackList>
-      </div>
+          ></SnackList */
 
   );
 }

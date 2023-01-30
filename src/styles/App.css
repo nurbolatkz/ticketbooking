@@ -1,99 +1,281 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
-}
-
-
-#root {
-    width:100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #000;
-}
-
-
-.card {
-    height: 332px;
-    width: 338px;
-    border-radius: 30px;
-    background: #F1F1F1;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    margin-right: 94px;
-}
-
-.card-img {
-    height: 127px;
-    width: 180px;
-    left: 229px;
-    top: 923px;
-    border-radius: 290px;
-    position: relative;
-    left: 21.34%;
-    right: 61.88%;
-    top: 41.71%;
-    bottom: 52.55%;
-    border-radius: 290px;
 
 }
-
-.card-body {
+#root,  .header-container {
     width: 100%;
+    margin: 0;
     padding: 0;
-    margin-top: 44px;
+}
+
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.container, .header-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.header-container {
     text-align: center;
 }
 
-.card-title  {
-    position: relative;
-    margin: 49px 131px 29px 131px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 31px;
-    height: 31px;
-    width: 76px;
-    border-radius: 0px;
-    color: #000000;
-
-}
-
-.card-footer {
-    height: 67px;
-    width: 210px;
-    margin-left: 64px;
-    margin-bottom: 23px;
-    margin-right:64px;
-    background: #E3231E;
-    border-radius: 16px;
-    padding:14px 38px;
-}
-.card-footer button {
-    height: 38px;
-    width: 134px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 31.2958px;
-    line-height: 38px;
+.container h1 {
+    text-align:  center;
+    display: inline-block;
+    height: 44px;
+    margin-top: 86px;
+    margin-bottom: 44px;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0em;
     text-align: center;
-    color: #FFFFFF;
-    background-color: transparent;
-    border: 0 transparent;
+    padding-left: 30px;
 }
 
 .row {
-    display: flex;
-    margin-top: 47px;
-    margin-bottom: 47px;
-    margin-left: 124px;
+    margin: 0 -5px;
+    padding-left: 120px;
 }
 
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the counter cards */
+.card {
+    width: 338px;
+    height: 332px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 47px;
+    margin-right: 94px;
+    background: #F1F1F1;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+.card img {
+    height: 127px;
+    width: 180px;
+    border-radius: 290px;
+}
+
+.card-body {
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+}
+
+.card-body h5 {
+    height: 31px;
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0em;
+    margin-bottom:  30px;
+
+}
+.card-body button{
+    margin-bottom: 15px;
+    height: 67px;
+    width: 210px;
+    border-radius: 16px;
+    background: #E3231E;
+    border-radius: 16px;
+    border: transparent;
+    color: #fff;
+    font-family: Inter;
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+@media screen and (min-width: 1200px){
+    .row {
+        margin: 0 -5px;
+        padding-left: 40px;
+    }
+
+    .card {
+        width: 86%;
+        height: 332px;
+        margin-right: 40px;
+    }
+}
+
+
+ /*!------------------------------------ for mobile size screen ------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .row {
+        padding: 0 20px;
+
+    }
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 180px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 4px;
+        margin-right: 33px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 75px;
+        width: 110px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom:  20px;
+    }
+    .card-body button{
+        margin-bottom: 5px;
+        height: 27px;
+        width: 90px;
+        border-radius: 16px;
+        background: #E3231E;
+        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+}
+
+/*!--------------------------------------------- for tablet size screen styles ! --------------------------------------------------------- */
+
+
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 33px;
+    }
+
+    .row {
+        padding-left: 35px;
+    }
+
+    .container h1 {
+        height: 31px;
+        margin-top: 18px;
+        margin-bottom: 30px;
+        margin-left: -33px;
+        font-family: Inter;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+
+    .card {
+        background: #F1F1F1;
+        height: 300px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 30px;
+        margin-right: 65px;
+
+    }
+
+    .card img {
+        height: 130px;
+        width: 220px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 19px;
+        font-family: Inter;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        margin-top: -5px;
+        margin-bottom: 19px;
+
+    }
+
+    .card-body button {
+        margin-bottom: 15px;
+        height: 60px;
+        width: 200px;
+        border-radius: 16px;
+        background: #E3231E;
+        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 31px;
+        font-weight: 500;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+}
 
 .suggest-date {
     height: 44px;
