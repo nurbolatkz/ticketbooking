@@ -1,7 +1,5 @@
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 
 }
 #root,  .header-container {
@@ -16,6 +14,7 @@ body {
 }
 
 /* Float four columns side by side */
+/* ----------------------------------------- start of desktop screen styles  -------------------------*/
 .column {
     float: left;
     width: 25%;
@@ -128,180 +127,16 @@ body {
 }
 
 
- /*!------------------------------------ for mobile size screen ------------------------------------------- */
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 50%;
-        display: block;
-        margin-bottom: 20px;
-    }
-    .row {
-        padding: 0 20px;
-
-    }
-    .container h1 {
-        height: 20px;
-        margin-top: 18px;
-        margin-bottom: 15px;
-        margin-left: -30px;
-        font-family: Inter;
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: center;
-    }
-
-    .card {
-        width: 100%;
-        background: #F1F1F1;
-        height: 180px;
-        text-align: center;
-        background-color: #f1f1f1;
-        margin-top: 16px;
-        padding: 4px;
-        margin-right: 33px;
-        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-    }
-
-    .card img {
-        height: 75px;
-        width: 110px;
-        border-radius: 290px;
-    }
-
-    .card-body h5 {
-        height: 13px;
-        font-family: Inter;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 12px;
-        letter-spacing: 0em;
-        margin-top: -15px;
-        margin-bottom:  20px;
-    }
-    .card-body button{
-        margin-bottom: 5px;
-        height: 27px;
-        width: 90px;
-        border-radius: 16px;
-        background: #E3231E;
-        border-radius: 16px;
-        border: transparent;
-        color: #fff;
-        font-family: Inter;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: center;
-    }
-
-}
-
-/*!--------------------------------------------- for tablet size screen styles ! --------------------------------------------------------- */
-
-
-@media screen and (min-width: 750px) and (max-width: 1100px) {
-    .column {
-        width: 50%;
-        display: block;
-        margin-bottom: 33px;
-    }
-
-    .row {
-        padding-left: 50px;
-    }
-
-    .container h1 {
-        height: 31px;
-        margin-top: 18px;
-        margin-bottom: 30px;
-        margin-left: -33px;
-        font-family: Inter;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 30px;
-        letter-spacing: 0em;
-        text-align: center;
-
-    }
-
-
-    .card {
-        background: #F1F1F1;
-        height: 300px;
-        width: 80%;
-        text-align: center;
-        background-color: #f1f1f1;
-        margin-top: 30px;
-        margin-right: 65px;
-
-    }
-
-    .card img {
-        height: 130px;
-        width: 220px;
-        border-radius: 290px;
-    }
-
-    .card-body h5 {
-        height: 19px;
-        font-family: Inter;
-        font-size: 26px;
-        font-weight: 500;
-        line-height: 18px;
-        letter-spacing: 0em;
-        margin-top: -5px;
-        margin-bottom: 19px;
-
-    }
-
-    .card-body button {
-        margin-bottom: 15px;
-        height: 60px;
-        width: 200px;
-        border-radius: 16px;
-        background: #E3231E;
-        border-radius: 16px;
-        border: transparent;
-        color: #fff;
-        font-family: Inter;
-        font-size: 31px;
-        font-weight: 500;
-        line-height: 38px;
-        letter-spacing: 0em;
-        text-align: center;
-
-    }
-}
-
-.suggest-date {
-    height: 44px;
-    width: 248px;
-    font-family: Inter;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0em;
-    margin-top: 107px;
-    margin-bottom: 69px;
-
-}
-
 .suggest-date-container {
     position: relative;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 80%;
     top: 150%;
-    height: 1132px;
+    margin: 0 auto;
     padding-top: 107px;
     background: #F8F8F8;
     box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
     border-radius: 109px;
+    padding-bottom: 200px;
 
 }
 
@@ -312,22 +147,19 @@ body {
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
-
     text-align: center;
     text-transform: uppercase;
-
     color: #000000;
 }
 
 .date-block {
     position: relative;
-    margin-top: 32px;
-    margin-left: 122px;
-    margin-right: 105px;
+    margin: 32px 105px 50px 122px;
     height: 171px;
     border-radius: 30px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding-top: 55px;
+    padding-top: 10px;
+    padding-left: 30px;
 }
 
 .date-block h5 {
@@ -339,9 +171,8 @@ body {
     font-size: 36px;
     line-height: 44px;
     margin-left: 95px;
-    text-align: center;
-
     color: #FFFFFF;
+
 }
 
 #today {
@@ -350,6 +181,7 @@ body {
 
 #tomorrow {
     background: #E3231E;
+
 }
 
 
@@ -435,3 +267,261 @@ body {
 #increment_btn {
     background: #FFB800;
 }
+/*-------------------------------------- end of desktop screen styles ----------------------------------------------------*/
+ /*!------------------------------------ start for mobile size screen ------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        padding: 0 20px;
+
+    }
+
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 180px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 4px;
+        margin-right: 33px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 75px;
+        width: 110px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .card-body button {
+        margin-bottom: 5px;
+        height: 27px;
+        width: 90px;
+        border-radius: 16px;
+        background: #E3231E;
+        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .suggest-date-container {
+        position: relative;
+        width: 86%;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-left: 0;
+        padding-right: 0;
+        background: #F8F8F8;
+        box-shadow: 0px 6px 27px rgba(0, 0, 0, 0.15);
+        border-radius: 33px;
+        padding-bottom: 60px;
+
+    }
+
+    .suggest-title {
+        margin-bottom: 25px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .date-block {
+        position: relative;
+        margin: 0 auto;
+        height: 100px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding-left: 10px;
+        width: 90%;
+
+    }
+
+    .date-block h5 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin-top: 20px;
+        margin-left: 10px;
+
+    }
+}
+/*!------------------------------------ end for mobile size screen ------------------------------------------- */
+
+/*!--------------------------------------------- for tablet size screen styles ! --------------------------------------------------------- */
+
+
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 33px;
+    }
+
+    .row {
+        padding-left: 50px;
+    }
+
+    .container h1 {
+        height: 31px;
+        margin-top: 18px;
+        margin-bottom: 30px;
+        margin-left: -33px;
+        font-family: Inter;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+
+    .card {
+        background: #F1F1F1;
+        height: 300px;
+        width: 80%;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 30px;
+        margin-right: 65px;
+
+    }
+
+    .card img {
+        height: 130px;
+        width: 220px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 19px;
+        font-family: Inter;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        margin-top: -5px;
+        margin-bottom: 19px;
+
+    }
+
+    .card-body button {
+        margin-bottom: 15px;
+        height: 60px;
+        width: 200px;
+        border-radius: 16px;
+        background: #E3231E;
+        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 31px;
+        font-weight: 500;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+
+    .suggest-date-container {
+        position: relative;
+        width: 86%;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-left: 0;
+        padding-right: 0;
+        background: #F8F8F8;
+        box-shadow: 0px 6px 27px rgba(0, 0, 0, 0.15);
+        border-radius: 33px;
+        padding-bottom: 60px;
+
+    }
+
+    .suggest-title {
+        margin-bottom: 25px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .date-block {
+        position: relative;
+        margin: 0 auto;
+        height: 150px;
+        width: 90%;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding-left: 10px;
+
+
+    }
+
+    .date-block h5 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin-top: 50px;
+        margin-left: 10px;
+
+    }
+}
+
+/*!--------------------------------------------- end tablet size screen styles ! --------------------------------------------------------- */
+
