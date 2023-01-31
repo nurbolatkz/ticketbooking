@@ -25,12 +25,44 @@ function App() {
 
     ])
 
+    const [cartItems, setCartItems] = useState([]);
+
+    const addItem = (item) => {
+        const exist = cartItems.find((x) => x.id === item.id);
+        if (exist) {
+            setCartItems(
+                cartItems.map((x) =>
+                    x.id === item.id ? { ...exist, quantity: exist.quantity + 1} : x
+                )
+
+            );
+
+        } else {
+            item.quantity = 1;
+            setCartItems([...cartItems, { ...item}]);
+        }
+
+    };
+
+    const removeItem = (item) => {
+        const exist = cartItems.find((x) => x.id === item.id);
+        if (exist.quantity === 1) {
+            setCartItems(cartItems.filter((x) => x.id !== item.id));
+        } else {
+            setCartItems(
+                cartItems.map((x) =>
+                    x.id === item.id ? { ...item, quantity: exist.quantity - 1 } : x
+                )
+            );
+        }
+    };
+
 
     return (
       <div>
           <CinemaCardList cards ={cards} ></CinemaCardList>
           <DateOption></DateOption>
-          <SnackList snack_cards={snacks}></SnackList>
+          <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
       </div>
 
 

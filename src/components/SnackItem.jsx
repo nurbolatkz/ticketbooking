@@ -6,10 +6,12 @@ const SnackItem = (props) => {
 
     const handleIncrement = () => {
         setQuantity(quantity + 1);
+        props.addItem(props.snack_card);
 
     };
     const handleDecrement = () => {
         setQuantity(quantity - 1);
+        props.removeItem(props.snack_card);
     };
 
 
