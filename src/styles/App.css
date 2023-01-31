@@ -183,90 +183,92 @@ body {
     background: #E3231E;
 
 }
-
-
-.snack-container {
-    margin-top: 100px;
-    position: relative;
-    height: 895px;
-    width: 100%;
-    background: #FFFFFF;
-    padding-top: 47px;
+/* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snack-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.snack-card  {
-    text-align: center;
-    margin-left: 5%;
-}
-.snack-card img {
+.snack-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 250px;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 0.3rem;
+    margin: 13px 10px;
     position: relative;
-    height: 133px;
-    width: 133px;
-    border-radius: 0px;
-    margin-left: 5%;
-    margin-bottom: 15px;
-    z-index: 0;
-
+    border-radius: 5px;
 }
 
 .snack-card-title {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 44px;
+    font-weight: 400;
     text-align: center;
-    color: #000000;
-    margin-bottom: 18px;
 }
 
-.snack-card button {
-    height: 67px;
-    width: 210px;
-    background: #E3231E;
-    border-radius: 16px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 31.2958px;
-    line-height: 38px;
-    text-align: center;
-    color: #FFFFFF;
-    border: transparent;
+.snack-card-title .snack-card-price {
+    font-weight: bold;
 }
-
-.snack-card .counter {
-    float: right;
-    height: 61px;
-    width: 61px;
-    border-radius: 0px;
-    padding: 20px;
-    border-radius: 50%;
-    background: #FFB800;
-    text-align: center;
-    z-index: 5;
-    margin-top: 5%;
-    margin-right: 5%;
-    visibility: hidden;
-}
-.btn-container{
+.select-btn {
     display: flex;
-    justify-content: space-between;
-    visibility: hidden;
+    margin-left: 25%;
+}
+.img-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
 }
 
-.btn-container button {
-    height: 67px;
-    width: 75px;
-    border-radius: 16px;
+.img-container img {
+    width: 100%;
+    object-fit: cover;
 }
 
-#decrement_btn {
-    background: #E3231E;
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#increment_btn {
-    background: #FFB800;
+.snack-card-price {
+    text-align: center;
+    display: inline-block;
 }
+
+.snack-card-counter{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(227, 112, 30);
+    border-radius: 50%;
+    transform: translate(20px, -20px) scale(1);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid rgb(227, 112, 30);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: scaleanimation 1s ease infinite;
+    opacity: 0.8;
+}
+
+@keyframes scaleanimation {
+    to {
+        transform: translate(20px, -20px) scale(1.05);
+        opacity: 1;
+    }
+}
+
+.snack-card-counter-hidden {
+    display: none;
+}
+
 /*-------------------------------------- end of desktop screen styles ----------------------------------------------------*/
  /*!------------------------------------ start for mobile size screen ------------------------------------------- */
 
