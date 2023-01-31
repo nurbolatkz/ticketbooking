@@ -210,20 +210,25 @@ body {
 .snack-card-title {
     font-weight: 400;
     text-align: center;
-}
-
-.snack-card-title  {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 24px;
     color: #000000;
+    display: block;
 }
+
 .select-btn {
-    display: flex;
+    font-size: 16px;
+    padding: 10px;
+    color:#F8F8F8;
+    border: none;
+    background: #E3231E;
+    display:block;
     margin-top: -5%;
-    margin-left: 25%;
+    margin-left: 20%;
+    border-radius: 8px;
 }
 .img-container {
     border-radius: 0px;
@@ -258,7 +263,7 @@ body {
 }
 .snack-card-price {
     text-align: center;
-    display: inline-block;
+    display: grid;
 }
 
 .snack-card-counter{
