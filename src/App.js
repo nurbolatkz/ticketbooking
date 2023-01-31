@@ -27,6 +27,8 @@ function App() {
 
     const [cartItems, setCartItems] = useState([]);
 
+    const [isModalActive, setIsModalActive] = useState(false);
+
     const addItem = (item) => {
         const exist = cartItems.find((x) => x.id === item.id);
         if (exist) {
