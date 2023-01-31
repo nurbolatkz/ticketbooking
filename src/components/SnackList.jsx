@@ -6,7 +6,7 @@ const SnackList = ({snack_cards}) => {
     return (
         <div className='snack-container'>
             {snack_cards.map((card) =>
-                <div className = 'row'>
+                <div className = 'snack-row'>
                     <SnackItem id={'snack-card' + card.id} snack_card={card}></SnackItem>
                 </div>
             )}
