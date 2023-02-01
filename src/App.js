@@ -8,14 +8,20 @@ import CinemaCardList from "./components/CinemaCardList";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
+import CinemaCard from "./components/CinemaCard";
+import CinemaInfo from "./components/CinemaInfo";
 /* ------ import css ------ */
 import './styles/App.css';
-import  './styles/App.css'
+
+
+
+
+
 
 
 function App() {
 
-    const [cards, setCards] = useState([
+const [cards, setCards] = useState([
         {id:1, address: 'KINO1', img_src: 'logo.jpg'},
         {id:2, address: 'KINO1', img_src: 'logo.jpg'},
         {id:3, address: 'KINO1', img_src: 'logo.jpg'},
@@ -107,6 +113,7 @@ function App() {
           <Modal active={isModalActive} setActive={setIsModalActive}>
               <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
           </Modal>
+           <CinemaInfo cinema_info = {{address: "Kino1", img_src: 'logo.jpg'}}/>
       </div>
       */
         <RouterProvider router={router} />
