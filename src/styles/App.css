@@ -50,6 +50,7 @@ body {
 .row {
     margin: 0 -5px;
     padding-inline: 5%;
+    padding-left: 120px;
 }
 
 /* Clear floats after the columns */
@@ -66,6 +67,9 @@ body {
     text-align: center;
     background-color: #fff;
     padding: 10px;
+
+    margin-top: 47px;
+    margin-right: 94px;
     background: #F1F1F1;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -275,12 +279,166 @@ body {
 .snack-card-price {
     text-align: center;
     display: inline-block;
+
+}
+
+@media screen and (min-width: 1200px){
+    .row {
+        margin: 0 -5px;
+        padding-left: 40px;
+    }
+
+    .card {
+        width: 86%;
+        height: 332px;
+        margin-right: 40px;
+    }
+}
+
+
+.suggest-date-container {
+    position: relative;
+    width: 90%;
+    top: 150%;
+    margin: 0 auto;
+    background: #F8F8F8;
+    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
+    border-radius: 109px;
+    padding-bottom: 200px;
+
+}
+
+.suggest-title {
+    margin-bottom: 69px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.date-block {
+    position: relative;
+    margin: 32px 105px 50px 122px;
+    height: 171px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.date-block h5 {
+    height: 44px;
+    width: 276px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-left: 95px;
+    color: #FFFFFF;
+
+}
+
+#today {
+    background: #FFB800;
+}
+
+#tomorrow {
+    background: #E3231E;
+
+}
+/* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snack-container{
+    padding:0;
+    margin:0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.snack-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 250px;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 0.3rem;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.snack-card-title {
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    display: block;
+}
+
+.select-btn {
+    font-size: 16px;
+    padding: 10px;
+    color:#F8F8F8;
+    border: none;
+    background: #E3231E;
+    display:block;
+    margin-top: -5%;
+    margin-left: 20%;
+    border-radius: 8px;
+}
+.img-container {
+    border-radius: 0px;
+    margin: 20px auto;
+}
+
+.img-container img {
+    height: 133px;
+    width: 120px;
+}
+
+.btn-container {
+    margin: 0;
+    display: flex;
+    align-items: space-between;
+}
+.btn-container button {
+    height: 46px;
+    width: 60px;
+    padding:0;
+    border: transparent;
+    border-radius: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 45px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+.snack-card-price {
+    text-align: center;
+    display: grid;
 }
 
 .snack-card-counter{
     position: absolute;
-    top: 0;
-    right: 0;
+
+    top: 5%;
+    right: 2%;
     width: 40px;
     height: 40px;
     background-color: rgb(227, 112, 30);
@@ -306,10 +464,18 @@ body {
     }
 }
 
-.snack-card-counter-hidden {
+.hide-element {
     display: none;
 }
 
+
+#increment_btn{
+    background: #E3231E;
+    margin-right: 15%;
+}
+#decrement_btn{
+    background: #FFB800;
+}
 /*-------------------------------------- end of desktop screen styles ----------------------------------------------------*/
  /*!------------------------------------ start for mobile size screen ------------------------------------------- */
 
