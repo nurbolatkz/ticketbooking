@@ -1,7 +1,7 @@
 import React from 'react';
 import CinemaCard from "./CinemaCard";
 
-const CinemaCardlist = ({cards, remove}) => {
+const CinemaCardlist = ({cards, setActiveModal, addCinemaCart}) => {
 
     if (!cards.length) {
         return (
@@ -31,9 +31,6 @@ const CinemaCardlist = ({cards, remove}) => {
 
     }
 
-
-
-
     return (
         <div className='container'>
         <div class="header-container">
@@ -42,15 +39,31 @@ const CinemaCardlist = ({cards, remove}) => {
 
             {cardFilterByFourElements.map((card) =>
                     <div className = 'row'>
-                          <CinemaCard cinema_card ={card[0]} />
+                          <CinemaCard
+                              cinema_card ={card[0]}
+                              setActive={setActiveModal}
+                              addToCart={addCinemaCart}
+                          />
                         {card[1] &&
-                            <CinemaCard cinema_card ={card[1]} />
+                            <CinemaCard
+                                cinema_card ={card[1]}
+                                setActive={setActiveModal}
+                                addToCart={addCinemaCart}
+                            />
                         }
                         {card[2] &&
-                            <CinemaCard cinema_card ={card[2]} />
+                            <CinemaCard
+                                cinema_card ={card[2]}
+                                setActive={setActiveModal}
+                                addToCart={addCinemaCart}
+                            />
                         }
                         {card[3] &&
-                            <CinemaCard cinema_card ={card[3]} />
+                            <CinemaCard
+                                cinema_card ={card[3]}
+                                setActive={setActiveModal}
+                                addToCart={addCinemaCart}
+                            />
                         }
 
                     </div>
