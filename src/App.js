@@ -15,6 +15,7 @@ import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
 /* ------ import css ------ */
 import './styles/App.css';
+import SnackPage from './components/SnackPage';
 
 
 
@@ -29,25 +30,68 @@ function App() {
 const [cards, setCards] = useState([
 
         {id:1, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:2, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:3, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:4, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:5, address: 'KINO1', img_src: 'logo.jpg'}
+        {id:2, address: 'KINO2', img_src: 'logo.jpg'},
+        {id:3, address: 'KINO3', img_src: 'logo.jpg'},
+        {id:4, address: 'KINO4', img_src: 'logo.jpg'},
+        {id:5, address: 'KINO5', img_src: 'logo.jpg'}
 
     ])
 
     const [fcards, setFCards] = useState([
-        {   id:1,
-            film_name: 'Вавилон',
-            times: ['20:30','21:10','21:40','22:00','00:00'],
-            lang: 'Русский',
-            ageaccess: '16'
+        {
+           id: 1,
+            movies : [
+                { id:1,
+                    film_name: 'Вавилон',
+                    date:'01.02.2023',
+                    times: ['20:30','21:10','21:40','22:00','00:00'],
+                    lang: 'Русский',
+                    ageaccess: '16'},
+                    {
+                        id:2, 
+                        film_name: 'Отзвуки прошлого',
+                        date: '02.02.2023',
+                        times: ['22:30','23:10', '23:40','00:00', '00:10'],
+                        lang: 'Русский',
+                        ageaccess: '18'
+                    }
+
+            ]
         },
-        {id:2, film_name: 'Отзвуки прошлого',
-            times: ['22:30','23:10', '23:40','00:00', '00:10'],
-            lang: 'Русский',
-            ageaccess: '18'
-        },
+        {
+           id: 2,
+            movies: [
+                { id:1,
+                    film_name: 'Вавилон',
+                    date:'01.02.2023',
+                    times: ['20:30','21:10','21:40','22:00','00:00'],
+                    lang: 'Русский',
+                    ageaccess: '16'},
+                    {
+                        id:2, 
+                        film_name: 'Отзвуки прошлого',
+                        date: '02.02.2023',
+                        times: ['22:30','23:10', '23:40','00:00', '00:10'],
+                        lang: 'Русский',
+                        ageaccess: '18'
+                    },
+                    { id:3,
+                        film_name: 'Вавилон',
+                        date:'01.02.2023',
+                        times: ['20:30','21:10','21:40','22:00','00:00'],
+                        lang: 'Русский',
+                        ageaccess: '16'},
+                        {
+                            id:4, 
+                            film_name: 'Отзвуки прошлого',
+                            date: '02.02.2023',
+                            times: ['22:30','23:10', '23:40','00:00', '00:10'],
+                            lang: 'Русский',
+                            ageaccess: '18'
+                        }
+            ]
+        }
+
     ])
 
 
@@ -122,23 +166,20 @@ const [cards, setCards] = useState([
                         <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
                     </Modal>
                 </>,
-            children: [
-                {
-                    path: "cinemas/:cinemaId/movies",
-                    element:
-                        <>
-                            <FilmCardList fcards = {fcards}></FilmCardList>
-                        </>,
-                },
-            ]
-
         },
         {
-            path: "/cinemas",
+            path: "/cinemas/:cinemaId/movies",
             element:
                 <>
                     <FilmCardList fcards = {fcards}></FilmCardList>
                 </>
+        },
+        {
+         path: "/test",
+         element:
+         <>
+            <SnackPage></SnackPage>
+         </>
         }
     ]);
 
