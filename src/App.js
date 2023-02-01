@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
     createBrowserRouter,
     RouterProvider,
+    redirect
 } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
@@ -36,10 +37,17 @@ const [cards, setCards] = useState([
     ])
 
     const [fcards, setFCards] = useState([
-        {id:1, film_name: 'Вавилон', times: ['20:30','21:10','21:40','22:00','00:00'], 
-        lang: 'Русский', ageaccess: '16'},
-        {id:2, film_name: 'Отзвуки прошлого', times: ['22:30','23:10',
-        '23:40','00:00', '00:10'], lang: 'Русский', ageaccess: '18'},
+        {   id:1,
+            film_name: 'Вавилон',
+            times: ['20:30','21:10','21:40','22:00','00:00'],
+            lang: 'Русский',
+            ageaccess: '16'
+        },
+        {id:2, film_name: 'Отзвуки прошлого',
+            times: ['22:30','23:10', '23:40','00:00', '00:10'],
+            lang: 'Русский',
+            ageaccess: '18'
+        },
     ])
 
 
@@ -101,6 +109,7 @@ const [cards, setCards] = useState([
     const selectDayOption = (day) => {
         setSelectedDay(day);
         console.log(selectedDay);
+        redirect('/cinemas');
     }
 
     const router = createBrowserRouter([
@@ -112,9 +121,25 @@ const [cards, setCards] = useState([
                     <Modal active={isModalActive} setActive={setIsModalActive}>
                         <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
                     </Modal>
-                </>
+                </>,
+            children: [
+                {
+                    path: "cinemas/:cinemaId/movies",
+                    element:
+                        <>
+                            <FilmCardList fcards = {fcards}></FilmCardList>
+                        </>,
+                },
+            ]
 
         },
+        {
+            path: "/cinemas",
+            element:
+                <>
+                    <FilmCardList fcards = {fcards}></FilmCardList>
+                </>
+        }
     ]);
 
 

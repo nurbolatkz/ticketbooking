@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {
+    Link
+} from "react-router-dom";
 const DateOption = ({selectDay, setActiveModal}) => {
     const selectDate = (day) => {
         selectDay(day);
@@ -10,10 +12,14 @@ const DateOption = ({selectDay, setActiveModal}) => {
             <h4 className='suggest-title'> ВЫБОР ДАТЫ</h4>
             <div>
                 <div className='date-block' id='today' onClick={()=>selectDate('today')}>
-                    <h5>Сегодня в кино</h5>
+                    <Link  to='/cinemas/5/movies'>
+                        <h5>Сегодня в кино</h5>
+                    </Link>
                 </div>
                 <div className='date-block' id='tomorrow'  onClick={()=>selectDate('tomorrow')}>
-                    <h5>На завтра</h5>
+                    <Link to='/cinemas'>
+                        <h5>На завтра</h5>
+                    </Link>
                 </div>
             </div>
         </div>
