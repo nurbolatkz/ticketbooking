@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+/* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
+/* ------ import css ------ */
+import './styles/App.css';
 import  './styles/App.css'
 
 
@@ -32,7 +39,6 @@ function App() {
     ])
 
 
-
     const addItem = (item) => {
         const exist = cartItems.find((x) => x.id === item.id);
         if (exist) {
@@ -50,6 +56,7 @@ function App() {
 
     };
 
+
     const removeItem = (item) => {
         const exist = cartItems.find((x) => x.id === item.id);
         if (exist.quantity === 1) {
@@ -63,17 +70,36 @@ function App() {
         }
     };
 
+
     const addCinemaCartItem = (item) => {
         setCinemaCartItem(item);
         setIsModalActive(false);
         console.log(cinemaCartItem);
 
     }
+
     const selectDayOption = (day) => {
         setSelectedDay(day);
         console.log(selectedDay);
     }
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element:
+                <>
+                    <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
+                    <Modal active={isModalActive} setActive={setIsModalActive}>
+                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
+                    </Modal>
+                </>
+
+        },
+    ]);
+
+
     return (
+        /*------ render component
       <div>
           <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
 
@@ -82,6 +108,8 @@ function App() {
               <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
           </Modal>
       </div>
+      */
+        <RouterProvider router={router} />
 
 
   );
