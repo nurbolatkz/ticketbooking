@@ -74,3 +74,4 @@ const CinemaCardlist = ({cards, setActiveModal, addCinemaCart}) => {
 };
 
 export default CinemaCardlist;
+

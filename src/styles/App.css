@@ -49,6 +49,7 @@ body {
 
 .row {
     margin: 0 -5px;
+    padding-inline: 5%;
     padding-left: 120px;
 }
 
@@ -66,6 +67,7 @@ body {
     text-align: center;
     background-color: #fff;
     padding: 10px;
+
     margin-top: 47px;
     margin-right: 94px;
     background: #F1F1F1;
@@ -110,6 +112,173 @@ body {
     line-height: 38px;
     letter-spacing: 0em;
     text-align: center;
+
+}
+
+@media screen and (min-width: 1200px){
+    .row {
+        margin: 0 -5px;
+        padding-left: 40px;
+    }
+
+    .card {
+        width: 86%;
+        height: 332px;
+        margin-right: 40px;
+    }
+}
+
+
+.suggest-date-container {
+    position: relative;
+    width: 80%;
+    top: 150%;
+    margin: 0 auto;
+    padding-top: 107px;
+    background: #F8F8F8;
+    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
+    border-radius: 109px;
+    padding-bottom: 200px;
+
+}
+
+.suggest-title {
+    margin-bottom: 69px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.date-block {
+    position: relative;
+    margin: 32px 105px 50px 122px;
+    height: 171px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.date-block h5 {
+    height: 44px;
+    width: 276px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-left: 95px;
+    color: #FFFFFF;
+
+}
+
+#today {
+    background: #FFB800;
+}
+
+#tomorrow {
+    background: #E3231E;
+
+}
+/* ------------------------------------- film card desktop screen ---------------------------------------------------------------------- */
+.timebutton{
+    padding-inline: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #C6C6C6;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.film-card{
+    width: 100%;
+    background: #F1F1F1;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.film-card-body{
+    display:grid;
+    margin-bottom: 20px;
+}
+.Time{
+    display: inline;
+}
+.film-times{
+    margin-inline:5%;
+}
+.film-name{
+    height: 5px;
+    color:#E3231E;
+}
+.age-access, .lang, .film-name{
+   margin-inline:5%;
+}
+.lang, .age-access{
+    font-size: 12px;
+    color: #9C9C9C;
+}
+.oneline .age-access{
+    float: right;
+}
+.line{
+    margin-inline:5%;
+    border: 1px solid #C6C6C6;
+}
+/* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snack-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.snack-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 250px;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 0.3rem;
+    margin: 13px 10px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.snack-card-title {
+    font-weight: 400;
+    text-align: center;
+}
+
+.snack-card-title .snack-card-price {
+    font-weight: bold;
+}
+.select-btn {
+    display: flex;
+    margin-left: 25%;
+}
+.img-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.img-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.snack-card-price {
+    text-align: center;
+    display: inline-block;
 
 }
 
@@ -267,6 +436,7 @@ body {
 
 .snack-card-counter{
     position: absolute;
+
     top: 5%;
     right: 2%;
     width: 40px;

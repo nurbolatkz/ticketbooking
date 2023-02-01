@@ -12,7 +12,9 @@ const CinemaCard = (props) => {
                 <img src={props.cinema_card.img_src} alt="cinema name"/>
                 <div class="card-body">
                   <h5>{props.cinema_card.address}</h5>
+
                   <button type="button" name="button" onClick={addToCart}>Выбрать</button>
+
                 </div>
             </div>
         </div>
