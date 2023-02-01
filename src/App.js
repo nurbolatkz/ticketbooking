@@ -1,14 +1,27 @@
 import React, {useState} from 'react';
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+/* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
-import  './styles/App.css'
+import CinemaCard from "./components/CinemaCard";
+import CinemaInfo from "./components/CinemaInfo";
+/* ------ import css ------ */
+import './styles/App.css';
+
+
+
+
+
 
 
 function App() {
 
-    const [cards, setCards] = useState([
+const [cards, setCards] = useState([
         {id:1, address: 'KINO1', img_src: 'logo.jpg'},
         {id:2, address: 'KINO1', img_src: 'logo.jpg'},
         {id:3, address: 'KINO1', img_src: 'logo.jpg'},
@@ -32,7 +45,6 @@ function App() {
     ])
 
 
-
     const addItem = (item) => {
         const exist = cartItems.find((x) => x.id === item.id);
         if (exist) {
@@ -50,6 +62,7 @@ function App() {
 
     };
 
+
     const removeItem = (item) => {
         const exist = cartItems.find((x) => x.id === item.id);
         if (exist.quantity === 1) {
@@ -63,17 +76,36 @@ function App() {
         }
     };
 
+
     const addCinemaCartItem = (item) => {
         setCinemaCartItem(item);
         setIsModalActive(false);
         console.log(cinemaCartItem);
 
     }
+
     const selectDayOption = (day) => {
         setSelectedDay(day);
         console.log(selectedDay);
     }
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element:
+                <>
+                    <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
+                    <Modal active={isModalActive} setActive={setIsModalActive}>
+                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
+                    </Modal>
+                </>
+
+        },
+    ]);
+
+
     return (
+        /*------ render component
       <div>
           <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
 
@@ -81,7 +113,10 @@ function App() {
           <Modal active={isModalActive} setActive={setIsModalActive}>
               <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
           </Modal>
+           <CinemaInfo cinema_info = {{address: "Kino1", img_src: 'logo.jpg'}}/>
       </div>
+      */
+        <RouterProvider router={router} />
 
 
   );
