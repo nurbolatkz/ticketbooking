@@ -30,10 +30,10 @@ function App() {
     const [cards, setCards] = useState([
 
         {id:1, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:2, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:3, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:4, address: 'KINO1', img_src: 'logo.jpg'},
-        {id:5, address: 'KINO1', img_src: 'logo.jpg'}
+        {id:2, address: 'KINO2', img_src: 'logo.jpg'},
+        {id:3, address: 'KINO3', img_src: 'logo.jpg'},
+        {id:4, address: 'KINO4', img_src: 'logo.jpg'},
+        {id:5, address: 'KINO5', img_src: 'logo.jpg'}
 
     ])
 
@@ -183,7 +183,7 @@ function App() {
             path: "/cinemas/:cinemaId/movies",
             element:
                 <>
-                    <FilmCardList fcards = {fcards}></FilmCardList>
+                    <FilmCardList fcards = {fcards} cinema_cards={cards}></FilmCardList>
                 </>
         },
 

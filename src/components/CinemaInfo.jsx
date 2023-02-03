@@ -18,9 +18,6 @@ const FilmTimes = ({filmTime, film_card}) =>{
 
     }
 
-
-
-
     return (
         <div className='Time'>
             <button className='timebutton' onClick={setShowShortInfo}>{filmTime}</button>
@@ -36,6 +33,7 @@ const CinemaInfo = (props) => {
         filmTimesElements.push(<FilmTimes key={i} filmTime={props.film_card.times[i]} film_card={props.film_card}/>);
     }
 
+
     return (
             <div class="film-card">
                 <div class="film-card-body">
@@ -48,14 +46,14 @@ const CinemaInfo = (props) => {
                         <hr className='line'></hr>
                     </div>
                     <div className='film-times'>
-                        { /*props.film_card.times.map((time)=>
-                            <FilmTimes filmTime = {time}> </FilmTimes>)*/
+                        {
                             filmTimesElements
 
                         }
                     </div>
                 </div>
             </div>
+
 
     );
 };

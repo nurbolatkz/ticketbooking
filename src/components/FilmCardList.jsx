@@ -3,7 +3,7 @@ import CinemaInfo from "./CinemaInfo";
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const FilmCardList = ({fcards, remove}) => {
+const FilmCardList = ({fcards, remove, cinema_cards}) => {
     const {cinemaId} = useParams();
     if (!fcards.length) {
         return (
@@ -12,8 +12,9 @@ const FilmCardList = ({fcards, remove}) => {
             </h1>
         )
     }
+    const cinema_card = cinema_cards.find(c => c.id === Number(cinemaId));
 
-    let movies = fcards.find((x) => x.id === cinemaId);
+    let movies = fcards.find((x) => x.id === Number(cinemaId));
 
     for(let i = 0; i<fcards.length; i++){
   
@@ -56,14 +57,14 @@ const FilmCardList = ({fcards, remove}) => {
     return (
         <div className='container'>
         <div class="header-container">
-            <h1>KINO1</h1>
+            <h1>{cinema_card.address}</h1>
         </div>
 
             {cardFilterByTwoElements.map((fcard) =>
                     <div className = 'row'>
-                          <CinemaInfo film_card ={fcard[0]} />
+                          <CinemaInfo film_card ={fcard[0]} cinemaCard={cinema_card} />
                         {fcard[1] &&
-                            <CinemaInfo film_card ={fcard[1]} film_times = {fcard[1]} />
+                            <CinemaInfo film_card ={fcard[1]} film_times = {fcard[1]} cinemaCard={cinema_card}/>
                         }
                     </div>
             )}
