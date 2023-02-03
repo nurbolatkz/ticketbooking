@@ -228,6 +228,27 @@ body {
     margin-inline:5%;
     border: 1px solid #C6C6C6;
 }
+
+.selectedBody{
+    text-align: center;
+    width: 100%;
+
+}
+.selectedBody span{
+    padding: 1%;
+    color: white;
+    display: inline;
+}
+.selected{
+    width: 100%;
+    background: #1CC641;
+    text-align: center;
+    padding: 2%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-weight: 400;
+    margin-top: 5%;
+}
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
 .snack-container{
     display: flex;

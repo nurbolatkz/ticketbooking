@@ -10,6 +10,7 @@ import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
+import SelectPlace from "./components/SelectPlace";
 
 import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
@@ -185,6 +186,7 @@ function App() {
                     <FilmCardList fcards = {fcards}></FilmCardList>
                 </>
         },
+
         {
             path: "/snacks",
             element:
@@ -192,6 +194,16 @@ function App() {
                     <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
                 </>
         },
+        {
+            path: "/places",
+            element:
+                <>
+                    <SelectPlace></SelectPlace>
+                </>
+        },
+
+
+
 
     ]);
 
