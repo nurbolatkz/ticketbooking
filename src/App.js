@@ -25,8 +25,19 @@ import './styles/App.css';
 
 function App() {
 
-    const [cards, setCards] = useState([])
 
+    const [cards, setCards] = useState([
+
+        {id:1, address: 'KINO1', img_src: 'logo.jpg'},
+        {id:2, address: 'KINO1', img_src: 'logo.jpg'},
+        {id:3, address: 'KINO1', img_src: 'logo.jpg'},
+        {id:4, address: 'KINO1', img_src: 'logo.jpg'},
+        {id:5, address: 'KINO1', img_src: 'logo.jpg'}
+
+    ])
+
+    /*
+    const [cards, setCards] = useState([])
     useEffect(() => {
         fetch('http://localhost:8000/cinemas/', {
             method: 'GET',
@@ -36,7 +47,7 @@ function App() {
             .then(res => console.log(res))
             .then(data => {setCards(data)})
     })
-
+*/
     const [fcards, setFCards] = useState([
         {
            id: 1,
@@ -172,6 +183,13 @@ function App() {
             element:
                 <>
                     <FilmCardList fcards = {fcards}></FilmCardList>
+                </>
+        },
+        {
+            path: "/snacks",
+            element:
+                <>
+                    <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
                 </>
         },
 
