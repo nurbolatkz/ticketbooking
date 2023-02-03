@@ -23,7 +23,7 @@ const SelectPlace = (props) => {
             <div id="seats" className='seats-container'>
 
                     {seatsObjArr.map((seat) =>
-                            <div className = 'row'>
+                            <div className = {'seat' + 'row-' + seat.row }>
                                 <h5>{seat.col}</h5>
                             </div>
                         )}

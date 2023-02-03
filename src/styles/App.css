@@ -249,6 +249,10 @@ body {
     font-weight: 400;
     margin-top: 5%;
 }
+
+.active-time-btn{
+    background: #E3231E;
+}
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
 .snack-container{
     display: flex;

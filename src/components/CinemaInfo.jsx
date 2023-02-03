@@ -1,14 +1,41 @@
 import React from 'react';
 
-const FilmTimes = ({filmTime}) =>{
+const FilmTimes = ({filmTime, film_card}) =>{
+
+    function setShowShortInfo(event) {
+        const filmTimeBtn = event.target;
+        const filmtTimeContainer = filmTimeBtn.parentNode.parentNode;
+        const filmTimeBtns = filmtTimeContainer.getElementsByClassName('timebutton');
+
+        let currentActiveBtn = filmtTimeContainer.getElementsByClassName("active-time-btn");
+        if (currentActiveBtn.length > 0) {
+            currentActiveBtn[0].className = "timebutton";
+            filmTimeBtn.classList.add("active-time-btn");
+        }else{
+            filmTimeBtn.classList.add("active-time-btn");
+        }
+
+
+    }
+
+
+
+
     return (
         <div className='Time'>
-            <button className='timebutton'>{filmTime}</button>            
+            <button className='timebutton' onClick={setShowShortInfo}>{filmTime}</button>
         </div>
     )
 }
 
 const CinemaInfo = (props) => {
+
+    const filmTimesElements = [];
+
+    for(let i = 0; i < props.film_card.times.length; i++){
+        filmTimesElements.push(<FilmTimes key={i} filmTime={props.film_card.times[i]} film_card={props.film_card}/>);
+    }
+
     return (
             <div class="film-card">
                 <div class="film-card-body">
@@ -21,8 +48,10 @@ const CinemaInfo = (props) => {
                         <hr className='line'></hr>
                     </div>
                     <div className='film-times'>
-                        {props.film_card.times.map((time)=>
-                            <FilmTimes filmTime = {time}></FilmTimes>)
+                        { /*props.film_card.times.map((time)=>
+                            <FilmTimes filmTime = {time}> </FilmTimes>)*/
+                            filmTimesElements
+
                         }
                     </div>
                 </div>
