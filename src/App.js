@@ -9,7 +9,6 @@ import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
-import SnackPage from './components/SnackPage';
 import FilmBlock from './components/FilmBlock';
 import CinemaPlace from './components/CinemaPlace';
 import CinemaInfo from "./components/CinemaInfo";
@@ -18,6 +17,7 @@ import SelectPlace from './components/SelectPlace';
 
 /* ------ import css ------ */
 import './styles/App.css';
+import ShortInfoBtn from './components/ShortInfoBtn';
 
 
 
@@ -114,6 +114,7 @@ function App() {
     const [isModalActive, setIsModalActive] = useState(false);
     const [cinemaCartItem, setCinemaCartItem] = useState({});
     const [selectedDay, setSelectedDay] = useState();
+    const[selectedMovie, setSelectedMovie] =  useState({});
 
 
     const [snacks, setSnacks] = useState([
@@ -161,15 +162,17 @@ function App() {
     const addCinemaCartItem = (item) => {
         setCinemaCartItem(item);
         setIsModalActive(false);
-        console.log(cinemaCartItem);
 
     }
 
     const selectDayOption = (day) => {
         setSelectedDay(day);
-        console.log(selectedDay);
     }
 
+    const setMovie = (movie, selectedTime)=>{
+        movie.selectedTime = selectedTime;
+        setSelectedMovie(movie);
+    }
     const router = createBrowserRouter([
         {
             path: "/",
@@ -185,7 +188,8 @@ function App() {
             path: "/cinemas/:cinemaId/movies",
             element:
                 <>
-                    <FilmCardList fcards = {fcards} cinema_cards={cards}></FilmCardList>
+                    <FilmCardList fcards = {fcards} cinema_cards={cards} setSelectedMovie={setMovie}></FilmCardList>
+                    <ShortInfoBtn cinema_card={cinemaCartItem} movie={selectedMovie}></ShortInfoBtn>
                 </>
         },
 
@@ -203,7 +207,7 @@ function App() {
                     <SelectPlace></SelectPlace>
                 </>
         },
-
+     
 
 
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import CinemaInfo from "./CinemaInfo";
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useParams} from 'react-router-dom';
 
-const FilmCardList = ({fcards, remove, cinema_cards}) => {
+const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
+
     const {cinemaId} = useParams();
     if (!fcards.length) {
         return (
@@ -49,10 +49,8 @@ const FilmCardList = ({fcards, remove, cinema_cards}) => {
         }
         counter++;
     }
-    console.log(cardFilterByTwoElements)
-
     
-
+    console.log(cardFilterByTwoElements)
 
     return (
         <div className='container'>
@@ -62,12 +60,21 @@ const FilmCardList = ({fcards, remove, cinema_cards}) => {
 
             {cardFilterByTwoElements.map((fcard) =>
                     <div className = 'row'>
-                          <CinemaInfo film_card ={fcard[0]} cinemaCard={cinema_card} />
+                          <CinemaInfo film_card ={fcard[0]} 
+                                      cinemaCard={cinema_card} 
+                                      setMovieItem={setSelectedMovie} 
+                           />
                         {fcard[1] &&
-                            <CinemaInfo film_card ={fcard[1]} film_times = {fcard[1]} cinemaCard={cinema_card}/>
+                            <CinemaInfo film_card ={fcard[1]} 
+                                        film_times = {fcard[1]} 
+                                        cinemaCard={cinema_card}
+                                        setMovieItem={setSelectedMovie} 
+                            />
                         }
                     </div>
             )}
+    
+             
         </div>
 
     );
