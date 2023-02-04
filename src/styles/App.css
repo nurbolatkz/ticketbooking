@@ -12,7 +12,23 @@
 body {
     font-family: Inter, sans-serif;
 }
-
+/* For Seats */
+.seatBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#seats-container{
+    display: grid;
+    grid-template-columns: repeat(13, 110px);
+    grid-template-rows: repeat(8,110px);
+}
+.seat{
+    height: 102px;
+    width: 100px;
+    background-color: grey;
+}
 /* Float four columns side by side */
 /* ----------------------------------------- start of desktop screen styles  -------------------------*/
 .column {
@@ -59,7 +75,88 @@ body {
     display: table;
     clear: both;
 }
+/* Style for the CinemaPlace */
+.cinemaPlaceBody{
+    margin-top: 30%;
+    margin-inline: 1%;
+    font-size: 80%;
+}
+.selectedElements{
+    font-weight: bold;
+    margin-inline: 1%;
+}
+.leftSide span{
+    float: left;
+}
+.leftSide{
 
+}
+.rightSide{
+
+    float: right;
+}
+/* Style for the film block */
+.filmBlockBody{
+    margin-top: 5%;
+    width: 100%;
+    text-align:start;
+}
+.filmImage{
+    margin-inline-start: 1%;
+    margin-inline-end: 5%;
+    width: 17%;
+    float: left;
+
+}
+
+.filmInfoBlockOne{
+    width: 25%;
+    float: left;
+    display: grid;
+}
+.filmInfoBlockTwo{
+    width: 45%;
+    float: right;
+    display: grid;
+
+}
+.filmTime{
+    font-size: 80%;
+    font-weight: bold;
+}
+.filmAgeAccess, .filmLang{
+    font-size: small;
+    color: #9C9C9C;
+}
+.filmName{
+    color: #E3231E;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+
+
+/* Style for the green component */
+.selectedBody{
+    text-align: center;
+    width: 100%;
+
+}
+.selectedBody span{
+    padding: 1%;
+    color: white;
+    display: inline;
+}
+.selected{
+    width: 100%;
+    background: #1CC641;
+    text-align: center;
+    padding: 2%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-weight: 400;
+    margin-top: 5%;
+}
 /* Style the counter cards */
 .card {
     width: 338px;
@@ -130,49 +227,41 @@ body {
 
 
 .suggest-date-container {
+    width: 100%;
+    height: 100%;
     position: relative;
-    width: 80%;
-    top: 150%;
-    margin: 0 auto;
-    padding-top: 107px;
     background: #F8F8F8;
     box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 109px;
-    padding-bottom: 200px;
+    border-radius: 30px;
 
 }
 
 .suggest-title {
-    margin-bottom: 69px;
+
     font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
+    font-weight: 900;
+    font-size: 150%;
     text-align: center;
     text-transform: uppercase;
     color: #000000;
 }
 
 .date-block {
-    position: relative;
-    margin: 32px 105px 50px 122px;
-    height: 171px;
-    border-radius: 30px;
+    text-align: left;
+    margin-inline: 10%;
+    border-radius: 15px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding-top: 10px;
-    padding-left: 30px;
+
 }
 
 .date-block h5 {
-    height: 44px;
-    width: 276px;
+    padding: 5%;
+    height: 5%;
+    width: 100%;
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
-    margin-left: 95px;
+    font-size: 100%;
+    margin-left: 6%;
     color: #FFFFFF;
 
 }
@@ -321,52 +410,7 @@ body {
 }
 
 
-.suggest-date-container {
-    position: relative;
-    width: 90%;
-    top: 150%;
-    margin: 0 auto;
-    background: #F8F8F8;
-    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 109px;
-    padding-bottom: 200px;
 
-}
-
-.suggest-title {
-    margin-bottom: 69px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-}
-
-.date-block {
-    position: relative;
-    margin: 32px 105px 50px 122px;
-    height: 171px;
-    border-radius: 30px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    padding-top: 10px;
-    padding-left: 30px;
-}
-
-.date-block h5 {
-    height: 44px;
-    width: 276px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
-    margin-left: 95px;
-    color: #FFFFFF;
-
-}
 
 #today {
     background: #FFB800;
@@ -576,55 +620,7 @@ body {
         text-align: center;
     }
 
-    .suggest-date-container {
-        position: relative;
-        width: 86%;
-        margin: 0 auto;
-        padding-top: 30px;
-        padding-left: 0;
-        padding-right: 0;
-        background: #F8F8F8;
-        box-shadow: 0px 6px 27px rgba(0, 0, 0, 0.15);
-        border-radius: 33px;
-        padding-bottom: 60px;
-
-    }
-
-    .suggest-title {
-        margin-bottom: 25px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #000000;
-    }
-
-    .date-block {
-        position: relative;
-        margin: 0 auto;
-        height: 100px;
-        margin-bottom: 30px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        padding-left: 10px;
-        width: 90%;
-
-    }
-
-    .date-block h5 {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 23px;
-        color: #FFFFFF;
-        margin-top: 20px;
-        margin-left: 10px;
-
-    }
+  
 }
 /*!------------------------------------ end for mobile size screen ------------------------------------------- */
 
@@ -705,56 +701,6 @@ body {
     }
 
 
-    .suggest-date-container {
-        position: relative;
-        width: 86%;
-        margin: 0 auto;
-        padding-top: 30px;
-        padding-left: 0;
-        padding-right: 0;
-        background: #F8F8F8;
-        box-shadow: 0px 6px 27px rgba(0, 0, 0, 0.15);
-        border-radius: 33px;
-        padding-bottom: 60px;
-
-    }
-
-    .suggest-title {
-        margin-bottom: 25px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #000000;
-    }
-
-    .date-block {
-        position: relative;
-        margin: 0 auto;
-        height: 150px;
-        width: 90%;
-        margin-bottom: 30px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        padding-left: 10px;
-
-
-    }
-
-    .date-block h5 {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 36px;
-        line-height: 23px;
-        color: #FFFFFF;
-        margin-top: 50px;
-        margin-left: 10px;
-
-    }
 }
 
 /*!--------------------------------------------- end tablet size screen styles ! --------------------------------------------------------- */

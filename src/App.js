@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     createBrowserRouter,
-    RouterProvider,
-    redirect
+    RouterProvider
 } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
@@ -10,12 +9,16 @@ import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
 import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
-import SelectPlace from "./components/SelectPlace";
-
+import SnackPage from './components/SnackPage';
+import FilmBlock from './components/FilmBlock';
+import CinemaPlace from './components/CinemaPlace';
 import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
+import SelectPlace from './components/SelectPlace';
+
 /* ------ import css ------ */
 import './styles/App.css';
+
 
 
 
@@ -165,7 +168,6 @@ function App() {
     const selectDayOption = (day) => {
         setSelectedDay(day);
         console.log(selectedDay);
-        redirect('/cinemas');
     }
 
     const router = createBrowserRouter([
@@ -175,7 +177,7 @@ function App() {
                 <>
                     <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
                     <Modal active={isModalActive} setActive={setIsModalActive}>
-                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
+                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption} cinema_cart={cinemaCartItem}></DateOption>
                     </Modal>
                 </>,
         },
