@@ -27,10 +27,6 @@ const SelectPlace = (props) => {
                                 <h5>{seat.col}</h5>
                             </div>
                         )}
-
-
-
-
             </div>
         </div>
     )

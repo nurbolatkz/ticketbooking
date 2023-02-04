@@ -13,22 +13,81 @@ body {
     font-family: Inter, sans-serif;
 }
 /* For Seats */
-.seatBody{
-    display: flex;
-    flex-direction: column;
+
+:root{
+
+ --seat-width:15px;
+ --seat-height: calc(var(--seat-width)*0.8);
+ --grid-seat-width: calc(var(--seat-width)*1.2);
+ --grid-seat-width-end: calc(var(--seat-width)*1.8);
+}
+.screen{
+    background-color: #9C9C9C;
+    transform: rotateX(-50deg);
+    box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+    width: 100%;
+    height: 10px;
+    
+}
+.placeTitle{
+    font-weight: bold;
+    margin-top:20px;
+    text-align: center;
+}
+.cinemaRoom{
+    margin-top: 20px;
     justify-content: center;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
 }
-#seats-container{
-    display: grid;
-    grid-template-columns: repeat(13, 110px);
-    grid-template-rows: repeat(8,110px);
+.place{
+    border: 2px;
+    border-style:inset;
+    background-color: #BCBCBC;
+    height: var(--seat-height);
+    width: var(--seat-width);
+   
 }
-.seat{
-    height: 102px;
-    width: 100px;
-    background-color: grey;
+.place:hover{
+    background-color: #FFB800;
+    transition: 1s;
 }
+.placeContainer {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(15, var(--grid-seat-width));
+    grid-template-rows: repeat(1, var(--grid-seat-width));
+}
+.rowNums{
+    margin-right: 10px;
+    color:#BCBCBC;
+    font-size: 100%; 
+}
+
+@media screen and (min-width: 800px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 300px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 200px) {
+    .place {
+        
+    }
+    .rowNums{
+        margin-inline-start: 0%;
+    }
+  }
 /* Float four columns side by side */
 /* ----------------------------------------- start of desktop screen styles  -------------------------*/
 .column {
@@ -76,71 +135,348 @@ body {
     clear: both;
 }
 /* Style for the CinemaPlace */
-.cinemaPlaceBody{
-    margin-top: 30%;
-    margin-inline: 1%;
-    font-size: 80%;
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+    .cinemaPlaceBody{
+        margin-top:200px;
+        font-size: 10px;
+    }
+    .selectedElements{
+        margin-inline: 10px;
+    }
 }
+@media screen and (min-width: 200px) and (max-width:500px){
+    .cinemaPlaceBody{
+        margin-top:120px;
+        font-size: 10px;
+    }
+    .selectedElements{
+        margin-inline: 10px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    .cinemaPlaceBody{
+        margin-top:120px;
+        font-size: 10px;
+    }
+    .selectedElements{
+        margin-inline: 10px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .cinemaPlaceBody{
+        margin-top:200px;
+        font-size: 12px;
+    }
+    .selectedElements{
+        margin-inline: 15px;
+    }
+}
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px) and (max-width:1400px){
+    .cinemaPlaceBody{
+        margin-top:300px;
+        font-size: 14px;
+    }
+    .selectedElements{
+        margin-inline: 15px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width:2000px){
+    .cinemaPlaceBody{
+        margin-top:300px;
+        font-size: 14px;
+    }
+    .selectedElements{
+        margin-inline: 25px;
+    }
+}
+/* MAIN */
 .selectedElements{
     font-weight: bold;
-    margin-inline: 1%;
 }
 .leftSide span{
     float: left;
 }
-.leftSide{
-
-}
 .rightSide{
-
     float: right;
 }
-/* Style for the film block */
+/*********************************** STYLE FOR FILM BLOCK ************************************/
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 70px;
+        height: 80px;
+        text-align: center;
+
+    }
+    .filmInfoBlockOne{
+        width: 70px;
+        height: 60px;
+        padding-block: 5px;
+        text-align: center;
+    }
+    .filmInfoBlockTwo{
+        float: left;
+        width: 60px;
+        height: 60px;
+        padding-block: 5px;
+        text-align: center;
+    }
+    .filmName{
+        font-size: 12px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 10px;
+    }
+    .filmTime{
+        font-size: 12px;
+    }
+  }
+@media screen and (min-width: 201px) and (max-width:300px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 50px;
+        height: 60px;
+        margin-inline-start: 5px;
+        margin-inline-end: 10px;
+    }
+    .filmInfoBlockOne{
+        width: 30px;
+        height: 60px;
+        padding-block: 5px;
+    }
+    .filmInfoBlockTwo{
+        width: 70px;
+        height: 60px;
+        padding-block: 5px;
+    }
+    .filmName{
+        font-size: 12px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 10px;
+    }
+    .filmTime{
+        font-size: 12px;
+    }
+  }
+@media screen and (min-width: 301px) and (max-width:400px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 60px;
+        height: 70px;
+        margin-inline-start: 5px;
+        margin-inline-end: 15px;
+    }
+    .filmInfoBlockOne{
+        width: 50px;
+        height: 70px;
+        padding-block: 10px;
+    }
+    .filmInfoBlockTwo{
+        width: 130px;
+        height: 80px;
+        padding-block: 10px;
+    }
+    .filmName{
+        font-size: 16px;
+ 
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 11px;
+    }
+    .filmTime{
+        font-size: 16px;
+ 
+    }
+  }
+  @media screen and (min-width: 400px) and (max-width:700px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 70px;
+        height: 80px;
+        margin-inline-start: 5px;
+        margin-inline-end: 20px;
+    }
+    .filmInfoBlockOne{
+        width: 80px;
+        height: 80px;
+        padding-block: 20px;
+    }
+    .filmInfoBlockTwo{
+        width: 200px;
+        height: 80px;
+        padding-block: 20px;
+    }
+    .filmName{
+        font-size: 16px;
+ 
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 11px;
+    }
+    .filmTime{
+        font-size: 16px;
+ 
+    }
+  }
+/* IPAD's */
+  @media screen and (min-width: 700px) and (max-width:1000px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 120px;
+        margin-inline-start: 15px;
+        margin-inline-end: 25px;
+    }
+    .filmInfoBlockOne{
+        width: 150px;
+        height: 140px;
+        padding-block: 25px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 350px;
+        height: 140px;
+        padding-block: 25px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px) and (max-width:1400px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 110px;
+        margin-inline-start: 15px;
+        margin-inline-end: 30px;
+    }
+    .filmInfoBlockOne{
+        width: 200px;
+        height: 140px;
+        padding-block: 25px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 600px;
+        height: 140px;
+        padding-block: 25px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+  @media screen and (min-width: 1400px) and (max-width:2000px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 120px;
+        height: 135px;
+        margin-inline-start: 25px;
+        margin-inline-end: 40px;
+    }
+    .filmInfoBlockOne{
+        width: 200px;
+        height: 140px;
+        padding-block: 35px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 900px;
+        height: 140px;
+        padding-block: 35px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+/*MAIN*/
 .filmBlockBody{
-    margin-top: 5%;
     width: 100%;
-    text-align:start;
+    text-align:start;  
 }
 .filmImage{
-    margin-inline-start: 1%;
-    margin-inline-end: 5%;
-    width: 17%;
     float: left;
-
 }
-
 .filmInfoBlockOne{
-    width: 25%;
     float: left;
-    display: grid;
 }
 .filmInfoBlockTwo{
-    width: 45%;
     float: right;
-    display: grid;
-
 }
 .filmTime{
-    font-size: 80%;
-    font-weight: bold;
+    font-weight: 550;
 }
 .filmAgeAccess, .filmLang{
-    font-size: small;
     color: #9C9C9C;
 }
 .filmName{
     color: #E3231E;
-    font-weight: bold;
-    font-size: 80%;
+    font-weight: 550;
 }
 
 
 
 /* Style for the green component */
+@media screen and (min-width: 100px) and (max-width:500px){
+    .selectedBody{
+       font-size: 14px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    .selectedBody{
+       font-size: 16px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .selectedBody{
+       font-size: 18px;
+    }
+}
 .selectedBody{
     text-align: center;
     width: 100%;
-
 }
 .selectedBody span{
     padding: 1%;
@@ -151,11 +487,11 @@ body {
     width: 100%;
     background: #1CC641;
     text-align: center;
-    padding: 2%;
+    padding: 1.5%;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-weight: 400;
-    margin-top: 5%;
+
 }
 /* Style the counter cards */
 .card {

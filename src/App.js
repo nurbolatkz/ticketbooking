@@ -16,9 +16,11 @@ import CinemaPlace from './components/CinemaPlace';
 import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
 import SelectPlace from './components/SelectPlace';
+import AllInfo from './components/AllInfo';
 
 /* ------ import css ------ */
 import './styles/App.css';
+
 
 
 
@@ -184,7 +186,7 @@ const [cards, setCards] = useState([
          <>
             <SnackPage></SnackPage>
             <FilmBlock></FilmBlock>
-            <CinemaPlace></CinemaPlace>
+            <AllInfo></AllInfo>
             {/* <SelectPlace></SelectPlace> */}
          </>
         },
@@ -192,7 +194,8 @@ const [cards, setCards] = useState([
         path: "/places",
         element:
         <>
-           <SelectPlace></SelectPlace>
+           {/* <SelectPlace></SelectPlace> */}
+           <CinemaPlace></CinemaPlace>
         </>
        },
     ]);
