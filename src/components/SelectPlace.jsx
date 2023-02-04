@@ -1,38 +1,40 @@
-// import React from 'react';
-// import CinemaInfo from './CinemaInfo';
-// import FilmCardList from "./FilmCardList";
+import React from 'react';
 
-// const SelectPlace = ({props}) => {
-//     return (
-//         <div className='seatBody'>
-//             <div className='seats-container'>
 
-//             </div>
-//         </div>
-//     )
-// }
+const SelectPlace = (props) => {
 
-// const Places = (row, col, booked) => {
-//     this.row = row;
-//     this.col = col;
-//     this.booked = booked;
-// }
-// seatsObjArr = [];
+    function Place(row, col, booked, price) {
+        this.row = row;
+        this.col = col;
+        this.booked = booked;
+        this.price = price;
+    }
+    let seatsObjArr = [];
 
-// for(let i = 0; i < 13; i++){
-//     for(j = 0; j < 8; j++){
-//         seatsObjArr.push(new Places(i, j, false));
-//     }
-// }
+    for(let i = 0; i < 13; i++){
+        for(let j = 0; j < 8; j++){
+            seatsObjArr.push(new Place(i, j, false, 1500));
+        }
+    }
 
-// console.log(seatsObjArr);
+    console.log(seatsObjArr);
+    return (
+        <div className='seatBody'>
+            <div id="seats" className='seats-container'>
 
-// seatsObjArr.array.forEach(seat => {
-//     const seatDiv = document.createElement('div');
-//     seatDiv.classList.add('seat');
-//     seatDiv.classList.add('row-${seat.row}');
-//     seatDiv.classList.add('row-${seat.col}');
+                    {seatsObjArr.map((seat) =>
+                            <div className = 'row'>
+                                <h5>{seat.col}</h5>
+                            </div>
+                        )}
 
-//     seatsContainer.appendChild(seatDiv);
-// });
-// export default SelectPlace;
+
+
+
+            </div>
+        </div>
+    )
+}
+
+
+export default SelectPlace;

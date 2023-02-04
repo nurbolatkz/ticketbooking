@@ -187,7 +187,14 @@ const [cards, setCards] = useState([
             <CinemaPlace></CinemaPlace>
             {/* <SelectPlace></SelectPlace> */}
          </>
-        }
+        },
+        {
+        path: "/places",
+        element:
+        <>
+           <SelectPlace></SelectPlace>
+        </>
+       },
     ]);
 
 
