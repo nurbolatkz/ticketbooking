@@ -1,21 +1,19 @@
 import React from 'react';
-import CinemaInfo from './CinemaInfo';
-import FilmCardList from "./FilmCardList";
 
 
-const SnackPage = ({props}) => {
+const ShortInfoBtn = (props) => {
     return (
         <div className='selectedBody'>
             <div className='selected'>
-                <span>KINO 1</span>
+                <span>{props.cinema_card.address}</span>
                 <span>-</span>
-                <span>Вавилон</span>
+                <span>{props.movie.film_name}</span>
                 <span>-</span>
-                <span>01.02.2023</span>
+                <span>{props.movie.date}</span>
                 <span>-</span>
-                <span>20:30</span>
+                <span>{props.movie.selectedTime}</span>
                 <span>-</span>
-                <span>Русс</span>
+                <span>{props.movie.lang}</span>
                 <span>-</span>
                 <span>Зал 5</span>
             </div>
@@ -23,4 +21,4 @@ const SnackPage = ({props}) => {
     )
 }
 
-export default SnackPage;
+export default ShortInfoBtn;

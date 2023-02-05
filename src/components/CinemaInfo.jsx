@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilmTimes = ({filmTime, film_card}) =>{
+const FilmTimes = ({filmTime, film_card, setSelectedOption}) =>{
 
     function setShowShortInfo(event) {
         const filmTimeBtn = event.target;
@@ -14,7 +14,7 @@ const FilmTimes = ({filmTime, film_card}) =>{
         }else{
             filmTimeBtn.classList.add("active-time-btn");
         }
-
+        setSelectedOption(film_card,filmTimeBtn.InnerHTML);
 
     }
 
@@ -30,7 +30,11 @@ const CinemaInfo = (props) => {
     const filmTimesElements = [];
 
     for(let i = 0; i < props.film_card.times.length; i++){
-        filmTimesElements.push(<FilmTimes key={i} filmTime={props.film_card.times[i]} film_card={props.film_card}/>);
+        filmTimesElements.push(<FilmTimes key={i} 
+                                        filmTime={props.film_card.times[i]} 
+                                        film_card={props.film_card}
+                                        setSelectedOption={props.setMovieItem}
+                                        />);
     }
 
 
