@@ -3,19 +3,92 @@ import CinemaInfo from './CinemaInfo';
 import FilmCardList from "./FilmCardList";
 
 
-const CinemaPlace = ({props}) => {
-    return (
-        <div className='cinemaPlaceBody'>
-            <div className='selectedElements'>
-                <div className='leftSide'>
-                    <span>5 ряд 10 место</span><br></br>
-                    <span>Взрослый</span>
-                </div>
-                <div className='rightSide'>
-                    <span >2000тг</span>
-                </div>
+
+const PlaceContainer = (props) =>{
+    
+    console.log(props);
+    const placeElements = [];
+    for(let i = 0; i < props.numberPlaces; i++){
+        
+        placeElements.push(<PlaceElement detail = {props}></PlaceElement>)
+    }
+    return(
+            <div className="placeContainer">
+                    {placeElements}
             </div>
+    )
+}
+
+const CinemaPlace = (props) =>{
+    const places = [
+        {
+            id: 1, 
+            rowOrder: 1,
+            placesInRow: 13,
+            price: 1000,
+        },
+        {
+            id: 2, 
+            rowOrder: 2,
+            placesInRow: 13,
+            price: 1000,
+        },
+        {
+            id: 3, 
+            rowOrder: 3,
+            placesInRow: 13,
+            price: 2000,
+        },
+        {
+            id: 4, 
+            rowOrder: 4,
+            placesInRow: 13,
+            price: 2000,
+        },
+        {
+            id: 5, 
+            rowOrder: 5,
+            placesInRow: 13,
+            price: 2000,
+        },
+        {
+            id: 6, 
+            rowOrder: 6,
+            placesInRow: 13,
+            price: 3000,
+        },
+        {
+            id: 7, 
+            rowOrder: 7,
+            placesInRow: 13,
+            price: 3000,
+        },
+        {
+            id: 8, 
+            rowOrder: 8,
+            placesInRow: 15,
+            price: 3000,
+        }
+    ] 
+    return (
+        <><div className="placeTitle">
+            <span>Выберите место</span>
         </div>
+        <div className="screen"></div>
+        <div className="cinemaRoom">
+                {<>
+                    <div className="rowNums">
+                        {places.map((place) => <div>
+                            <span>
+                                {place.rowOrder}
+                            </span>
+                        </div>
+                        )}</div>
+                    <div className="allPlaceContainer">
+                        {places.map((place) => <PlaceContainer numberPlaces={place.placesInRow} placePrice={place.price} row={place.rowOrder}></PlaceContainer>
+
+                        )}</div></>}
+            </div></>
     )
 }
 

@@ -11,6 +11,10 @@ import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import FilmBlock from './components/FilmBlock';
 import CinemaPlace from './components/CinemaPlace';
+import SnackPage from './components/SnackPage';
+import FilmBlock from './components/FilmBlock';
+import CinemaPlace from './components/CinemaPlace';import SelectPlace from "./components/SelectPlace";
+
 import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
 import SelectPlace from './components/SelectPlace';
@@ -18,6 +22,9 @@ import SelectPlace from './components/SelectPlace';
 /* ------ import css ------ */
 import './styles/App.css';
 import ShortInfoBtn from './components/ShortInfoBtn';
+
+
+
 
 
 
@@ -201,25 +208,35 @@ function App() {
                     </ShortInfoBtn>
                 </>
         },
-
         {
-            path: "/snacks",
-            element:
-                <>
-                    <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
-                </>
+         path: "/test",
+         element:
+         <>
+            <SnackPage></SnackPage>
+            <FilmBlock></FilmBlock>
+            <AllInfo></AllInfo>
+            {/* <SelectPlace></SelectPlace> */}
+         </>
         },
         {
-            path: "/places",
-            element:
-                <>
-                    <SelectPlace></SelectPlace>
-                </>
+         path: "/test",
+         element:
+         <>
+            <SnackPage></SnackPage>
+            <FilmBlock></FilmBlock>
+            <AllInfo></AllInfo>
+            {/* <SelectPlace></SelectPlace> */}
+         </>
         },
-     
-
-
-
+        {
+        path: "/places",
+        element:
+        <>
+           {/* <SelectPlace></SelectPlace> */}
+           <CinemaPlace></CinemaPlace>
+           <SeatPrice></SeatPrice>
+        </>
+       },
     ]);
 
 

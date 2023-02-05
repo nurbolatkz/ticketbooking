@@ -211,6 +211,71 @@ body {
     text-align: center;
 
 }
+@media screen and (min-width: 200px){
+    .suggest-date-body{
+        width: 200px; 
+        padding-bottom: 15px;   
+    }
+    .suggest-title{
+        font-size: 16px
+    }
+    .date-block h5{
+        padding: 10px;
+        font-size: 12px;  
+    }
+    .date-block{
+        margin-inline: 50px;
+    }
+}
+@media screen and (min-width: 300px){
+    .suggest-date-body{
+        width: 350px; 
+        padding-bottom: 15px;   
+    }
+    .suggest-title{
+        font-size: 18px
+    }
+    .date-block h5{
+        padding: 15px;
+        font-size: 16px;  
+    }
+    .date-block{
+        margin-inline: 50px;
+    }
+}
+
+@media screen and (min-width: 700px){      
+    .suggest-date-body{
+        width: 600px;  
+        padding-bottom: 15px; 
+    }
+    .suggest-title{
+        font-size: 24px
+    }
+    .date-block h5{
+        padding-block: 20px;
+        font-size: 22px;
+    }
+    .date-block{
+        margin-inline: 80px;
+    }
+}
+@media screen and (min-width: 900px){      
+    .suggest-date-body{
+        width: 600px;  
+        padding-bottom: 20px; 
+    }
+    .suggest-title{
+        font-size: 26px
+    }
+    .date-block h5{
+        padding-block: 20px;
+        font-size: 24px;
+    }
+    .date-block{
+        margin-inline: 80px;
+    }
+}
 
 @media screen and (min-width: 1200px){
     .row {
@@ -225,7 +290,8 @@ body {
     }
 }
 
-
+.suggest-date-body{
+}
 .suggest-date-container {
     width: 100%;
     height: 100%;
@@ -235,7 +301,10 @@ body {
     border-radius: 30px;
 
 }
-
+.modal-content{
+    display: flex;
+    justify-content: center;
+}
 .suggest-title {
 
     font-family: 'Inter';
@@ -245,7 +314,6 @@ body {
     text-transform: uppercase;
     color: #000000;
 }
-
 .date-block {
     text-align: left;
     margin-inline: 10%;
