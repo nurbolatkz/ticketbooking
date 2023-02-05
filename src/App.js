@@ -176,6 +176,11 @@ function App() {
 
     }
 
+    const addTypeOfSelecedPlace = (type, price)=>{
+        selectedPlace.type = type;
+        selectedPlace.price = price;
+    }
+
 
 
     const router = createBrowserRouter([
@@ -212,7 +217,7 @@ function App() {
             element:
                 <>
                     <div className='filmBlockAll'>
-                        <FilmBlock  movie={selectedMovie}></FilmBlock>
+                        <FilmBlock movie={selectedMovie}></FilmBlock>
                     </div>
                     <div className='allInfoBlockAll'>
                         <AllInfo></AllInfo>
@@ -233,7 +238,7 @@ function App() {
                         <CinemaPlace setDetailOfPlace={setPlaceInfo} ></CinemaPlace>
                     </div>
                     <div className={isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'} >
-                        <SeatPrice selectedMovie={cinemaCartItem}></SeatPrice>
+                        <SeatPrice selectedMovie={cinemaCartItem} setTypeOfPlace={addTypeOfSelecedPlace}></SeatPrice>
                     </div>
                     <div className={!isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'}>
                         <ShortInfoBtn cinema_card={cinemaCartItem}

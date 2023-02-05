@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AllInfo = ({props}) => {
+const AllInfo = (props) => {
     return (
         <div className='cinemaPlaceBody'>
             <div className='selectedElements'>

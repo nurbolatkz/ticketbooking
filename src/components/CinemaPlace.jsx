@@ -32,8 +32,8 @@ const PlaceElement = (props) =>{
 
         rowspan.innerHTML = props.details.row + '  ';
         colspan.innerHTML = '  ' +  props.columnId + '  ';
-        priceForStudent.innerHTML = props.details.placePrice;
-        priceForAdult.innerHTML = props.details.placePrice + 800;
+        priceForStudent.innerHTML = props.details.placePrice + ' тг';
+        priceForAdult.innerHTML = props.details.placePrice + 800 + ' тг';
 
         props.details.setPlaceInfo(placeInfo);
 
