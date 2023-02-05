@@ -112,6 +112,11 @@ function App() {
     const [selectedMovie, setSelectedMovie] =  useState({});
     const [selectedPlace, setSelectedPlace] = useState({});
     const [isSeatPriceActive, setIsSeatPriceActive] = useState(false);
+    const [ticketDetails, setTicketDetails] = useState({cinemaCartItem: {},
+                                                        selectedDay: {},
+                                                        selectedMovie: {},
+                                                        selectedPlace: {},
+                                                        cartItems: []});
 
 
     const [snacks, setSnacks] = useState([
@@ -138,6 +143,8 @@ function App() {
             item.quantity = 1;
             setCartItems([...cartItems, { ...item}]);
         }
+        setTicketDetails({...ticketDetails,cartItems: [...cartItems]});
+        console.log(ticketDetails);
 
     };
 
@@ -153,32 +160,38 @@ function App() {
                 )
             );
         }
+        setTicketDetails({...ticketDetails,cartItems: [...cartItems]});
+        console.log(ticketDetails);
+
     };
 
 
     const addCinemaCartItem = (item) => {
         setCinemaCartItem(item);
         setIsModalActive(false);
+        setTicketDetails({...ticketDetails,cinemaCartItem: item});
 
     }
 
     const selectDayOption = (day) => {
         setSelectedDay(day);
+        setTicketDetails({...ticketDetails,selectedDay: day});
     }
 
     const setMovie = (movie)=>{
         setSelectedMovie(movie);
+        setTicketDetails({...ticketDetails,selectedMovie: movie});
     }
 
     const setPlaceInfo = (placeInfo)=>{
         setIsSeatPriceActive(true);
         setSelectedPlace(placeInfo);
-
     }
 
     const addTypeOfSelecedPlace = (type, price)=>{
         selectedPlace.type = type;
         selectedPlace.price = price;
+        setTicketDetails({...ticketDetails,selectedPlace: selectedPlace});
     }
 
 
@@ -220,7 +233,7 @@ function App() {
                         <FilmBlock movie={selectedMovie}></FilmBlock>
                     </div>
                     <div className='allInfoBlockAll'>
-                        <AllInfo></AllInfo>
+                        <AllInfo place_detail={selectedPlace}></AllInfo>
                     </div>
                     <div className='snackBlockAll'>
                         <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>

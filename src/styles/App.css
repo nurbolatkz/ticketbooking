@@ -6,7 +6,9 @@
     margin: 0;
     padding: 0;
 }
-
+#root a {
+    text-decoration: none;
+}
 body {
     font-family: Inter, sans-serif;
     background-color: #EFEFEF;
@@ -697,7 +699,9 @@ body {
     padding: 1%;
     color: white;
     display: inline;
+
 }
+
 .selected{
     width: 100%;
     background: #1CC641;
@@ -707,6 +711,7 @@ body {
     border-radius: 5px;
     font-weight: 400;
     margin-top: 5%;
+
 }
 
 .active-time-btn{
