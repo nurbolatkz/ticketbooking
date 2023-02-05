@@ -5,7 +5,6 @@ const FilmTimes = ({filmTime, film_card, setSelectedOption}) =>{
     function setShowShortInfo(event) {
         const filmTimeBtn = event.target;
         const filmtTimeContainer = filmTimeBtn.parentNode.parentNode;
-        const filmTimeBtns = filmtTimeContainer.getElementsByClassName('timebutton');
 
         let currentActiveBtn = filmtTimeContainer.getElementsByClassName("active-time-btn");
         if (currentActiveBtn.length > 0) {
@@ -14,7 +13,11 @@ const FilmTimes = ({filmTime, film_card, setSelectedOption}) =>{
         }else{
             filmTimeBtn.classList.add("active-time-btn");
         }
-        setSelectedOption(film_card,filmTimeBtn.InnerHTML);
+
+        film_card.selectedTime = filmTimeBtn.innerHTML;
+        let selectedTimeBtn = document.getElementById('selected-movie-time')
+        selectedTimeBtn.innerHTML = filmTimeBtn.innerHTML;
+        setSelectedOption(film_card);
 
     }
 

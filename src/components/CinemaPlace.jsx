@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 
 const PlaceElement = (props) =>{
     // console.log("test "+props.detail.row)
@@ -8,7 +9,6 @@ const PlaceElement = (props) =>{
         </div>
     )
 }
-
 
 const PlaceContainer = (props) =>{
     

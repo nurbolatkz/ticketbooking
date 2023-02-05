@@ -1,7 +1,4 @@
 import React from 'react';
-import CinemaInfo from './CinemaInfo';
-import FilmCardList from "./FilmCardList";
-
 
 const AllInfo = ({props}) => {
     return (

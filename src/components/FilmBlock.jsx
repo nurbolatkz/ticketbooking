@@ -1,8 +1,6 @@
 import React from 'react';
-import CinemaInfo from './CinemaInfo';
-import FilmCardList from "./FilmCardList";
 
-const FilmBlock = ({props}) => {
+const FilmBlock = (props) => {
     return(
         <div className='filmBlockBody'>
             <div className='filmInfoBody'>
