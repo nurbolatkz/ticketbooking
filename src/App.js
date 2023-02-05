@@ -5,33 +5,19 @@ import {
 } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
-import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
-import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import FilmBlock from './components/FilmBlock';
-import CinemaPlace from './components/CinemaPlace';
 import SnackPage from './components/SnackPage';
-import FilmBlock from './components/FilmBlock';
-import CinemaPlace from './components/CinemaPlace';import SelectPlace from "./components/SelectPlace";
-
-import CinemaInfo from "./components/CinemaInfo";
+import CinemaPlace from './components/CinemaPlace';
 import FilmCardList from './components/FilmCardList';
-import SelectPlace from './components/SelectPlace';
+import ShortInfoBtn from './components/ShortInfoBtn';
+import AllInfo from './components/AllInfo';
+
+import SeatPrice from './components/SeatPrice';
 
 /* ------ import css ------ */
 import './styles/App.css';
-import ShortInfoBtn from './components/ShortInfoBtn';
-
-
-
-
-
-
-
-
-
-
 
 
 function App() {
@@ -212,22 +198,13 @@ function App() {
          path: "/test",
          element:
          <>
-            <SnackPage></SnackPage>
+            <SnackPage snack_cards={snacks}></SnackPage>
             <FilmBlock></FilmBlock>
             <AllInfo></AllInfo>
             {/* <SelectPlace></SelectPlace> */}
          </>
         },
-        {
-         path: "/test",
-         element:
-         <>
-            <SnackPage></SnackPage>
-            <FilmBlock></FilmBlock>
-            <AllInfo></AllInfo>
-            {/* <SelectPlace></SelectPlace> */}
-         </>
-        },
+       
         {
         path: "/places",
         element:
@@ -241,24 +218,7 @@ function App() {
 
 
     return (
-        /*------ render component
-      <div>
-          <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
-
-          <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
-          <Modal active={isModalActive} setActive={setIsModalActive}>
-              <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
-          </Modal>
-           <CinemaInfo cinema_info = {{address: "Kino1", img_src: 'logo.jpg'}}/>
-           
-            <div>
-          <CinemaCardList cards ={cards} ></CinemaCardList>
-          <FilmCardList fcards = {fcards}></FilmCardList>
-          <DateOption></DateOption>
-          <SnackList snack_cards={snacks}></SnackList>
-      </div>
-      </div>
-      */
+       
         <RouterProvider router={router} />
 
 

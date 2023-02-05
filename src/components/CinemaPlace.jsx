@@ -1,8 +1,14 @@
 import React from 'react';
-import CinemaInfo from './CinemaInfo';
-import FilmCardList from "./FilmCardList";
 
 
+const PlaceElement = (props) =>{
+    // console.log("test "+props.detail.row)
+    console.log("test "+props.detail.placePrice)
+    return(
+        <div className="place">
+        </div>
+    )
+}
 
 const PlaceContainer = (props) =>{
     
