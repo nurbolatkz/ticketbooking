@@ -2,34 +2,24 @@ import React, { useState, useEffect } from 'react';
 import {
     createBrowserRouter,
     RouterProvider,
-    redirect
+    Link
 } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
-import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
-import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import FilmBlock from './components/FilmBlock';
+import SnackPage from './components/SnackPage';
 import CinemaPlace from './components/CinemaPlace';
-import SelectPlace from "./components/SelectPlace";
-
-
 import FilmCardList from './components/FilmCardList';
+import ShortInfoBtn from './components/ShortInfoBtn';
 import AllInfo from './components/AllInfo';
+
 import SeatPrice from './components/SeatPrice';
+
 /* ------ import css ------ */
 import './styles/App.css';
-import ShortInfoBtn from './components/ShortInfoBtn';
-
-
-
-
-
-
-
-
-
 
 
 function App() {
@@ -119,7 +109,14 @@ function App() {
     const [isModalActive, setIsModalActive] = useState(false);
     const [cinemaCartItem, setCinemaCartItem] = useState({});
     const [selectedDay, setSelectedDay] = useState();
-    const[selectedMovie, setSelectedMovie] =  useState({});
+    const [selectedMovie, setSelectedMovie] =  useState({});
+    const [selectedPlace, setSelectedPlace] = useState({});
+    const [isSeatPriceActive, setIsSeatPriceActive] = useState(false);
+    const [ticketDetails, setTicketDetails] = useState({cinemaCartItem: {},
+                                                        selectedDay: {},
+                                                        selectedMovie: {},
+                                                        selectedPlace: {},
+                                                        cartItems: []});
 
 
     const [snacks, setSnacks] = useState([
@@ -146,6 +143,8 @@ function App() {
             item.quantity = 1;
             setCartItems([...cartItems, { ...item}]);
         }
+        setTicketDetails({...ticketDetails,cartItems: [...cartItems]});
+        console.log(ticketDetails);
 
     };
 
@@ -161,25 +160,42 @@ function App() {
                 )
             );
         }
+        setTicketDetails({...ticketDetails,cartItems: [...cartItems]});
+        console.log(ticketDetails);
+
     };
 
 
     const addCinemaCartItem = (item) => {
         setCinemaCartItem(item);
         setIsModalActive(false);
+        setTicketDetails({...ticketDetails,cinemaCartItem: item});
 
     }
 
     const selectDayOption = (day) => {
         setSelectedDay(day);
-        console.log(selectedDay);
-        redirect('/cinemas');
+        setTicketDetails({...ticketDetails,selectedDay: day});
     }
 
-    const setMovie = (movie, selectedTime)=>{
-        movie.selectedTime = selectedTime;
+    const setMovie = (movie)=>{
         setSelectedMovie(movie);
+        setTicketDetails({...ticketDetails,selectedMovie: movie});
     }
+
+    const setPlaceInfo = (placeInfo)=>{
+        setIsSeatPriceActive(true);
+        setSelectedPlace(placeInfo);
+    }
+
+    const addTypeOfSelecedPlace = (type, price)=>{
+        selectedPlace.type = type;
+        selectedPlace.price = price;
+        setTicketDetails({...ticketDetails,selectedPlace: selectedPlace});
+    }
+
+
+
     const router = createBrowserRouter([
         {
             path: "/",
@@ -187,7 +203,7 @@ function App() {
                 <>
                     <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
                     <Modal active={isModalActive} setActive={setIsModalActive}>
-                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
+                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption} cinema_cart={cinemaCartItem}></DateOption>
                     </Modal>
                 </>,
         },
@@ -195,51 +211,66 @@ function App() {
             path: "/cinemas/:cinemaId/movies",
             element:
                 <>
-                    <FilmCardList fcards = {fcards} cinema_cards={cards} setSelectedMovie={setMovie}></FilmCardList>
-                    <ShortInfoBtn cinema_card={cinemaCartItem} movie={selectedMovie}></ShortInfoBtn>
+                    <FilmCardList fcards = {fcards}
+                                 cinema_cards={cards}
+                                  setSelectedMovie={setMovie}
+                    ></FilmCardList>
+                    <Link to="/places/">
+                        <ShortInfoBtn cinema_card={cinemaCartItem}
+                                      movie={selectedMovie}
+                        >
+
+                        </ShortInfoBtn>
+                    </Link>
+
                 </>
         },
         {
-         path: "/test",
-         element:
-         <>
-            <SnackPage></SnackPage>
-            <FilmBlock></FilmBlock>
-            <AllInfo></AllInfo>
-            {/* <SelectPlace></SelectPlace> */}
-         </>
+            path: "/payment",
+            element:
+                <>
+                    <div className='filmBlockAll'>
+                        <FilmBlock movie={selectedMovie}></FilmBlock>
+                    </div>
+                    <div className='allInfoBlockAll'>
+                        <AllInfo place_detail={selectedPlace}></AllInfo>
+                    </div>
+                    <div className='snackBlockAll'>
+                        <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+                    </div>
+                </>
         },
         {
-        path: "/places",
-        element:
-        <>
-           {/* <SelectPlace></SelectPlace> */}
-           <CinemaPlace></CinemaPlace>
-           <SeatPrice></SeatPrice>
-        </>
-       },
+            path: "/places",
+            element:
+                <>
+                    <div className='filmBlockAll'>
+                        <FilmBlock movie={selectedMovie}></FilmBlock>
+                    </div>
+                    <div className='cinemaPlaceBlockAll'>
+                        <CinemaPlace setDetailOfPlace={setPlaceInfo} ></CinemaPlace>
+                    </div>
+                    <div className={isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'} >
+                        <SeatPrice selectedMovie={cinemaCartItem} setTypeOfPlace={addTypeOfSelecedPlace}></SeatPrice>
+                    </div>
+                    <div className={!isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'}>
+                        <ShortInfoBtn cinema_card={cinemaCartItem}
+                                      movie={selectedMovie}>
+
+                        </ShortInfoBtn>
+                    </div>
+
+
+
+                </>
+        },
+       
+
     ]);
 
 
     return (
-        /*------ render component
-      <div>
-          <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
-
-          <SnackList snack_cards={snacks} addItem={addItem} removeItem={removeItem}></SnackList>
-          <Modal active={isModalActive} setActive={setIsModalActive}>
-              <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
-          </Modal>
-           <CinemaInfo cinema_info = {{address: "Kino1", img_src: 'logo.jpg'}}/>
-           
-            <div>
-          <CinemaCardList cards ={cards} ></CinemaCardList>
-          <FilmCardList fcards = {fcards}></FilmCardList>
-          <DateOption></DateOption>
-          <SnackList snack_cards={snacks}></SnackList>
-      </div>
-      </div>
-      */
+       
         <RouterProvider router={router} />
 
 
@@ -247,3 +278,4 @@ function App() {
 }
 
 export default App;
+
