@@ -170,6 +170,10 @@ function App() {
         setSelectedMovie(movie);
     }
 
+    const setPlaceInfo = (placeInfo)=>{
+        setSelectedPlace(placeInfo);
+    }
+
 
 
     const router = createBrowserRouter([
@@ -225,7 +229,7 @@ function App() {
                         <FilmBlock></FilmBlock>
                     </div>
                     <div className='cinemaPlaceBlockAll'>
-                        <CinemaPlace></CinemaPlace>
+                        <CinemaPlace setDetailOfPlace={setPlaceInfo} ></CinemaPlace>
                     </div>
                     <div className='seatPriceBlockAll'>
                         <SeatPrice></SeatPrice>

@@ -20,7 +20,7 @@ const PlaceElement = (props) =>{
         priceForStudent.innerHTML = props.details.placePrice;
         priceForAdult.innerHTML = props.details.placePrice + 800;
 
-        props.setPlaceInfo(placeInfo);
+        props.details.setPlaceInfo(placeInfo);
 
 
     }
@@ -45,6 +45,7 @@ const PlaceContainer = (props) =>{
 }
 
 const CinemaPlace = (props) =>{
+
     const places = [
         {
             id: 1, 
