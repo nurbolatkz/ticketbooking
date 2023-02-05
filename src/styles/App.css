@@ -8,27 +8,111 @@
     padding: 0;
 }
 
-
+.lineBlock{
+    margin:0;
+    padding: 0;
+    height: 40px;
+    background-color: #9C9C9C;
+}
 body {
     font-family: Inter, sans-serif;
 }
-/* For Seats */
-.seatBody{
-    display: flex;
-    flex-direction: column;
+/* SeatPrice style */
+.seatPriceBody hr{
+    color: #9C9C9C;
+}
+.seatPriceBody span{
+    float: right;
+}
+.seatPriceBody{
+    width: 100%;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.seatPriceTitle{
+    text-align: center;
+    font-weight: bold;
+}
+.VIP{
+    color: #DBDBDB;
+}
+/* SeatPlace style */
+
+:root{
+
+ --seat-width:15px;
+ --seat-height: calc(var(--seat-width)*0.8);
+ --grid-seat-width: calc(var(--seat-width)*1.2);
+ --grid-seat-width-end: calc(var(--seat-width)*1.8);
+}
+.screen{
+    background-color: #9C9C9C;
+    transform: rotateX(-50deg);
+    box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+    width: 100%;
+    height: 10px;
+    
+}
+.placeTitle{
+    font-weight: bold;
+    margin-top:20px;
+    text-align: center;
+}
+.cinemaRoom{
+    margin-top: 20px;
     justify-content: center;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
 }
-#seats-container{
-    display: grid;
-    grid-template-columns: repeat(13, 110px);
-    grid-template-rows: repeat(8,110px);
+.place{
+    border: 2px;
+    border-style:inset;
+    background-color: #BCBCBC;
+    height: var(--seat-height);
+    width: var(--seat-width);
+   
 }
-.seat{
-    height: 102px;
-    width: 100px;
-    background-color: grey;
+.place:hover{
+    background-color: #FFB800;
+    transition: 1s;
 }
+.placeContainer {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(15, var(--grid-seat-width));
+    grid-template-rows: repeat(1, var(--grid-seat-width));
+}
+.rowNums{
+    margin-right: 10px;
+    color:#BCBCBC;
+    font-size: 100%; 
+}
+
+@media screen and (min-width: 800px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 300px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 200px) {
+    .place {
+        margin: 3px;
+        --seat-width:10px;
+    }
+    .rowNums{
+        margin-inline-start: 0px;
+    }
+  }
 /* Float four columns side by side */
 /* ----------------------------------------- start of desktop screen styles  -------------------------*/
 .column {
@@ -76,72 +160,359 @@ body {
     clear: both;
 }
 /* Style for the CinemaPlace */
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+    .cinemaPlaceBody{
+        padding-block: 100px;
+
+    }
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 200px) and (max-width:500px){
+    .cinemaPlaceBody{
+        padding-block: 100px;
+
+    }
+    .selectedElements{
+        margin-inline: 5px;
+        padding-block: 5px;
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    .cinemaPlaceBody{
+        padding-block: 80px;
+    }
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .cinemaPlaceBody{
+        padding-block: 120px;
+    }
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 15px;
+        font-size: 16px;
+    }
+}
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px) and (max-width:1400px){
+    .cinemaPlaceBody{
+        font-size: 14px;
+        padding-block: 120px;
+    }
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 15px;
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width:2000px){
+    .cinemaPlaceBody{
+        font-size: 14px;
+        padding-block: 130px;
+    }
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 25px;
+        font-size: 18px;
+
+    }
+}
+/* MAIN */
 .cinemaPlaceBody{
-    margin-top: 30%;
-    margin-inline: 1%;
-    font-size: 80%;
 }
 .selectedElements{
     font-weight: bold;
-    margin-inline: 1%;
 }
 .leftSide span{
     float: left;
 }
-.leftSide{
-    float: left;
-
-}
 .rightSide{
-
     float: right;
 }
-/* Style for the film block */
+/*********************************** STYLE FOR FILM BLOCK ************************************/
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 70px;
+        height: 80px;
+        text-align: center;
+
+    }
+    .filmInfoBlockOne{
+        width: 70px;
+        height: 60px;
+        padding-block: 5px;
+        text-align: center;
+    }
+    .filmInfoBlockTwo{
+        float: left;
+        width: 60px;
+        height: 60px;
+        padding-block: 5px;
+        text-align: center;
+    }
+    .filmName{
+        font-size: 12px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 10px;
+    }
+    .filmTime{
+        font-size: 12px;
+    }
+  }
+@media screen and (min-width: 201px) and (max-width:300px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 50px;
+        height: 60px;
+        margin-inline-start: 5px;
+        margin-inline-end: 10px;
+    }
+    .filmInfoBlockOne{
+        width: 30px;
+        height: 60px;
+        padding-block: 5px;
+    }
+    .filmInfoBlockTwo{
+        width: 70px;
+        height: 60px;
+        padding-block: 5px;
+    }
+    .filmName{
+        font-size: 12px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 10px;
+    }
+    .filmTime{
+        font-size: 12px;
+    }
+  }
+@media screen and (min-width: 301px) and (max-width:400px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 60px;
+        height: 70px;
+        margin-inline-start: 5px;
+        margin-inline-end: 15px;
+    }
+    .filmInfoBlockOne{
+        width: 50px;
+        height: 70px;
+        padding-block: 10px;
+    }
+    .filmInfoBlockTwo{
+        width: 130px;
+        height: 80px;
+        padding-block: 10px;
+    }
+    .filmName{
+        font-size: 16px;
+ 
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 11px;
+    }
+    .filmTime{
+        font-size: 16px;
+ 
+    }
+  }
+  @media screen and (min-width: 400px) and (max-width:700px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 70px;
+        height: 80px;
+        margin-inline-start: 5px;
+        margin-inline-end: 20px;
+    }
+    .filmInfoBlockOne{
+        width: 70px;
+        height: 80px;
+        padding-block: 20px;
+    }
+    .filmInfoBlockTwo{
+        width: 200px;
+        height: 80px;
+        padding-block: 20px;
+    }
+    .filmName{
+        font-size: 16px;
+ 
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 11px;
+    }
+    .filmTime{
+        font-size: 16px;
+ 
+    }
+  }
+/* IPAD's */
+  @media screen and (min-width: 700px) and (max-width:1000px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 120px;
+        margin-inline-start: 15px;
+        margin-inline-end: 25px;
+    }
+    .filmInfoBlockOne{
+        width: 150px;
+        height: 140px;
+        padding-block: 25px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 350px;
+        height: 140px;
+        padding-block: 25px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px) and (max-width:1400px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 110px;
+        margin-inline-start: 15px;
+        margin-inline-end: 30px;
+    }
+    .filmInfoBlockOne{
+        width: 200px;
+        height: 140px;
+        padding-block: 25px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 600px;
+        height: 140px;
+        padding-block: 25px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+  @media screen and (min-width: 1400px) and (max-width:2000px){
+    .filmBlockBody{
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 120px;
+        height: 135px;
+        margin-inline-start: 25px;
+        margin-inline-end: 40px;
+    }
+    .filmInfoBlockOne{
+        width: 200px;
+        height: 140px;
+        padding-block: 35px;
+        
+    }
+    .filmInfoBlockTwo{
+        width: 900px;
+        height: 140px;
+        padding-block: 35px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+/*MAIN*/
 .filmBlockBody{
-    margin-top: 5%;
     width: 100%;
-    text-align:start;
+    text-align:start;  
 }
 .filmImage{
-    margin-inline-start: 1%;
-    margin-inline-end: 5%;
-    width: 17%;
     float: left;
-
 }
-
 .filmInfoBlockOne{
-    width: 25%;
     float: left;
-    display: grid;
 }
 .filmInfoBlockTwo{
-    width: 45%;
     float: right;
-    display: grid;
-
 }
 .filmTime{
-    font-size: 80%;
-    font-weight: bold;
+    font-weight: 550;
 }
 .filmAgeAccess, .filmLang{
-    font-size: small;
     color: #9C9C9C;
 }
 .filmName{
     color: #E3231E;
-    font-weight: bold;
-    font-size: 80%;
+    font-weight: 550;
 }
 
-
-
 /* Style for the green component */
+@media screen and (min-width: 100px) and (max-width:500px){
+    .selectedBody{
+       font-size: 14px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    .selectedBody{
+       font-size: 16px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .selectedBody{
+       font-size: 18px;
+    }
+}
 .selectedBody{
     text-align: center;
     width: 100%;
-
 }
 .selectedBody span{
     padding: 1%;
@@ -152,11 +523,11 @@ body {
     width: 100%;
     background: #1CC641;
     text-align: center;
-    padding: 2%;
+    padding: 1.5%;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-weight: 400;
-    margin-top: 5%;
+
 }
 /* Style the counter cards */
 .card {
@@ -292,48 +663,34 @@ body {
 }
 
 .suggest-date-body{
-    background: #F8F8F8;
-    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
-}
-.suggest-date-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: #F8F8F8;
-    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
 
+    background: #F8F8F8;
+    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
 }
 .modal-content{
     display: flex;
     justify-content: center;
 }
 .suggest-title {
-
     font-family: 'Inter';
     font-weight: 900;
-    font-size: 150%;
     text-align: center;
     text-transform: uppercase;
     color: #000000;
 }
 .date-block {
     text-align: left;
-    margin-inline: 10%;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-
+}
+.date-block a{
+    text-decoration: none;
 }
 
 .date-block h5 {
-    padding: 5%;
-    height: 5%;
-    width: 100%;
     font-family: 'Inter';
-    font-weight: 600;
-    font-size: 100%;
-    margin-left: 6%;
+    font-weight: 400;
     color: #FFFFFF;
 
 }
@@ -415,86 +772,13 @@ body {
     background: #E3231E;
 }
 
-/* SeatPlace style */
-:root{
-
-    --seat-width:15px;
-    --seat-height: calc(var(--seat-width)*0.8);
-    --grid-seat-width: calc(var(--seat-width)*1.2);
-    --grid-seat-width-end: calc(var(--seat-width)*1.8);
-}
-.screen{
-       background-color: #9C9C9C;
-       transform: rotateX(-50deg);
-       box-shadow: 0 3px 10px rgba(255,255,255,0.7);
-       width: 100%;
-       height: 10px;
-       
-}
-.placeTitle{
-       font-weight: bold;
-       margin-top:20px;
-       text-align: center;
-}
-.cinemaRoom{
-       margin-top: 20px;
-       justify-content: center;
-       display: flex;
-       align-items: stretch;
-}
-.place{
-       border: 2px;
-       border-style:inset;
-       background-color: #BCBCBC;
-       height: var(--seat-height);
-       width: var(--seat-width);
-      
-}
-.place:hover{
-       background-color: #FFB800;
-       transition: 1s;
-}
-.placeContainer {
-       display: flex;
-       justify-content: center;
-       grid-template-columns: repeat(15, var(--grid-seat-width));
-       grid-template-rows: repeat(1, var(--grid-seat-width));
-}
-.rowNums{
-       margin-right: 10px;
-       color:#BCBCBC;
-       font-size: 100%; 
-}
-   
-@media screen and (min-width: 800px) {
-       .place {
-           margin: 3px;
-       }
-       .rowNums{
-           margin-inline-start: 3%;
-       }
-}
-
-@media screen and (min-width: 300px) {
-    .place {
-           margin: 3px;
-    }
-    .rowNums{
-           margin-inline-start: 3%;
-    }
-}
-
-@media screen and (min-width: 200px) {
-    .place {
-           margin: 3px;
-           --seat-width:10px;
-    }
-    .rowNums{
-           margin-inline-start: 0px;
-    }
-}
 
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snaksTitle{
+    margin-inline: 10px;
+    color: #E3231E;
+    font-weight: 600;
+}
 .snack-container{
     display: flex;
     flex-wrap: wrap;
@@ -700,7 +984,148 @@ body {
 /*-------------------------------------- end of desktop screen styles ----------------------------------------------------*/
  /*!------------------------------------ start for mobile size screen ------------------------------------------- */
 
-@media screen and (max-width: 600px) {
+ @media screen and (min-width: 150px) and (max-width: 350px){
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        padding: 0 20px;
+
+    }
+
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 150px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 4px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 40px;
+        width: 50px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .card-body button {
+
+        height: 22px;
+        width: 60px;
+        border-radius: 16px;
+        background: #E3231E;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+    } 
+}
+@media screen and (min-width: 300px) and (max-width: 600px){
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        padding: 0 20px;
+
+    }
+
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 180px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 4px;
+        margin-right: 33px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 75px;
+        width: 110px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .card-body button {
+        margin-bottom: 5px;
+        height: 27px;
+        width: 90px;
+        border-radius: 16px;
+        background: #E3231E;
+        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+}
+ @media screen and (min-width: 600px) {
     .column {
         width: 50%;
         display: block;

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
     createBrowserRouter,
-    RouterProvider
+    RouterProvider,
+    Link
 } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
 import DateOption from "./components/DateOption";
@@ -186,12 +188,15 @@ function App() {
                                  cinema_cards={cards}
                                   setSelectedMovie={setMovie}
                     ></FilmCardList>
-                    <ShortInfoBtn cinema_card={cinemaCartItem}
-                                  movie={selectedMovie} 
-                                  movie_time={selectedTime}
-                                  >
+                    <Link to="/places/">
+                        <ShortInfoBtn cinema_card={cinemaCartItem}
+                                      movie={selectedMovie}
+                                      movie_time={selectedTime}
+                        >
 
-                    </ShortInfoBtn>
+                        </ShortInfoBtn>
+                    </Link>
+
                 </>
         },
         {
@@ -210,9 +215,15 @@ function App() {
         path: "/places",
         element:
         <>
-           {/* <SelectPlace></SelectPlace> */}
-           <CinemaPlace></CinemaPlace>
-           <SeatPrice></SeatPrice>
+
+            <FilmBlock></FilmBlock>
+
+            <div>
+                <CinemaPlace></CinemaPlace>
+                <SeatPrice></SeatPrice>
+            </div>
+
+
         </>
        },
     ]);
