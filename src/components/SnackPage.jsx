@@ -6,7 +6,11 @@ import SnackList from "./SnackList.jsx";
 const SnackPage = ({props}) => {
     return (
         <div>
-            <SnackList snack_cards={props.snacks_cards}></SnackList>
+            <SnackList  snack_cards={props.snacks_cards} 
+                        addItem={props.addSnack} 
+                        removeItem={props.removeSnack}>
+                        
+            </SnackList>
         </div>
     )
 }
