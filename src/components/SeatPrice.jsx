@@ -1,9 +1,16 @@
 import React from 'react';
-
-const SeatPrice = ({props}) => {
+import {
+    Link
+} from "react-router-dom";
+const SeatPrice = (props) => {
     return (
         <div className='seatPriceBody'>
             <div className='seatPriceTitle'>
+
+                <Link to={`/cinemas/${props.selectedMovie.id}/movies`}>
+                    &larr;
+                </Link>
+
                 <label id='placeRowId'> 1 </label>  ряд
                 <label id='placeColId'> 1 </label>  место
             </div>

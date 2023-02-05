@@ -2,6 +2,20 @@ import React from 'react';
 
 
 const PlaceElement = (props) =>{
+
+    function setActive(e){
+        const activePlace = e.target;
+        const placeContainer = activePlace.parentNode.parentNode;
+
+        let currentActiveBtns = placeContainer.getElementsByClassName("active-time-btn");
+        if(currentActiveBtns.length > 0){
+            currentActiveBtns[0].className="place";
+            activePlace.classList.add("active-time-btn");
+        }else{
+            activePlace.classList.add("active-time-btn");
+        }
+
+    }
     function handleClick(e){
 
         const rowspan =  document.getElementById('placeRowId');
@@ -14,6 +28,7 @@ const PlaceElement = (props) =>{
             price: props.details.placePrice
         }
 
+        setActive(e);
 
         rowspan.innerHTML = props.details.row + '  ';
         colspan.innerHTML = '  ' +  props.columnId + '  ';
@@ -23,9 +38,10 @@ const PlaceElement = (props) =>{
         props.details.setPlaceInfo(placeInfo);
 
 
+
     }
     return(
-        <div className="place" onClick={()=>handleClick()}>
+        <div className="place" onClick={handleClick}>
         </div>
     )
 }

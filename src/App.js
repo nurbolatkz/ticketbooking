@@ -111,6 +111,7 @@ function App() {
     const [selectedDay, setSelectedDay] = useState();
     const [selectedMovie, setSelectedMovie] =  useState({});
     const [selectedPlace, setSelectedPlace] = useState({});
+    const [isSeatPriceActive, setIsSeatPriceActive] = useState(false);
 
 
     const [snacks, setSnacks] = useState([
@@ -170,7 +171,9 @@ function App() {
     }
 
     const setPlaceInfo = (placeInfo)=>{
+        setIsSeatPriceActive(true);
         setSelectedPlace(placeInfo);
+
     }
 
 
@@ -229,40 +232,22 @@ function App() {
                     <div className='cinemaPlaceBlockAll'>
                         <CinemaPlace setDetailOfPlace={setPlaceInfo} ></CinemaPlace>
                     </div>
-                    <div className='seatPriceBlockAll'>
-                        <SeatPrice></SeatPrice>
+                    <div className={isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'} >
+                        <SeatPrice selectedMovie={cinemaCartItem}></SeatPrice>
                     </div>
-
-                    <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
+                    <div className={!isSeatPriceActive ? 'seatPriceBlockAll': 'hide-element'}>
                         <ShortInfoBtn cinema_card={cinemaCartItem}
-                                      movie={selectedMovie}
-                        >
+                                      movie={selectedMovie}>
 
                         </ShortInfoBtn>
-                    </Link>
+                    </div>
+
+
 
                 </>
         },
        
-        {
-        path: "/places",
-        element:
-        <>
-            <FilmBlock></FilmBlock>
-            <CinemaPlace setDetailOfPlace={()=>setSelectedPlace}></CinemaPlace>
-            <SeatPrice></SeatPrice>
 
-            <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
-                <ShortInfoBtn cinema_card={cinemaCartItem}
-                              movie={selectedMovie}W
-                >
-
-                </ShortInfoBtn>
-            </Link>
-            { /* <FilmBlock></FilmBlock> */}
-
-        </>
-       },
     ]);
 
 
