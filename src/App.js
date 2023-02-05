@@ -12,11 +12,11 @@ import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import SnackPage from './components/SnackPage';
 import FilmBlock from './components/FilmBlock';
-import CinemaPlace from './components/CinemaPlace';import SelectPlace from "./components/SelectPlace";
+import CinemaPlace from './components/CinemaPlace';
+import SelectPlace from "./components/SelectPlace";
 
-import CinemaInfo from "./components/CinemaInfo";
+
 import FilmCardList from './components/FilmCardList';
-import SelectPlace from './components/SelectPlace';
 import AllInfo from './components/AllInfo';
 import SeatPrice from './components/SeatPrice';
 /* ------ import css ------ */
@@ -191,7 +191,7 @@ function App() {
             path: "/cinemas/:cinemaId/movies",
             element:
                 <>
-                    <FilmCardList fcards = {fcards}></FilmCardList>
+                    <FilmCardList fcards = {fcards} cinema_cards={cards}></FilmCardList>
                 </>
         },
         {

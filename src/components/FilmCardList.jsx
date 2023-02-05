@@ -2,8 +2,6 @@ import React from 'react';
 import CinemaInfo from "./CinemaInfo";
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 
 const FilmCardList = ({fcards, remove, cinema_cards}) => {
     const {cinemaId} = useParams();
@@ -18,25 +16,10 @@ const FilmCardList = ({fcards, remove, cinema_cards}) => {
 
     let movies = fcards.find((x) => x.id === Number(cinemaId));
 
-    for(let i = 0; i<fcards.length; i++){
-  
-        if(fcards[i].id == cinemaId){
-            movies = fcards[i].movies
-        }
-    }
-    if (!movies){
-        return(
-            <h1 style={{textAlign: 'center'}}>
-            Movies не найдены!
-        </h1>
-        )
-    }
-
-    movies = fcards.find((x) => x.id === cinemaId);
 
     for(let i = 0; i<fcards.length; i++){
   
-        if(fcards[i].id == cinemaId){
+        if(fcards[i].id === Number(cinemaId)){
             movies = fcards[i].movies
         }
     }
