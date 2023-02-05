@@ -110,7 +110,6 @@ function App() {
     const [cinemaCartItem, setCinemaCartItem] = useState({});
     const [selectedDay, setSelectedDay] = useState();
     const [selectedMovie, setSelectedMovie] =  useState({});
-    const [selectedTime, setSelectedTime] = useState();
     const [selectedPlace, setSelectedPlace] = useState({});
 
 
@@ -198,7 +197,6 @@ function App() {
                     <Link to="/places/">
                         <ShortInfoBtn cinema_card={cinemaCartItem}
                                       movie={selectedMovie}
-                                      movie_time={selectedTime}
                         >
 
                         </ShortInfoBtn>
@@ -211,7 +209,7 @@ function App() {
             element:
                 <>
                     <div className='filmBlockAll'>
-                        <FilmBlock></FilmBlock>
+                        <FilmBlock  movie={selectedMovie}></FilmBlock>
                     </div>
                     <div className='allInfoBlockAll'>
                         <AllInfo></AllInfo>
@@ -226,7 +224,7 @@ function App() {
             element:
                 <>
                     <div className='filmBlockAll'>
-                        <FilmBlock></FilmBlock>
+                        <FilmBlock movie={selectedMovie}></FilmBlock>
                     </div>
                     <div className='cinemaPlaceBlockAll'>
                         <CinemaPlace setDetailOfPlace={setPlaceInfo} ></CinemaPlace>
@@ -238,7 +236,6 @@ function App() {
                     <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
                         <ShortInfoBtn cinema_card={cinemaCartItem}
                                       movie={selectedMovie}
-                                      movie_time={selectedTime}
                         >
 
                         </ShortInfoBtn>
@@ -257,8 +254,7 @@ function App() {
 
             <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
                 <ShortInfoBtn cinema_card={cinemaCartItem}
-                              movie={selectedMovie}
-                              movie_time={selectedTime}
+                              movie={selectedMovie}W
                 >
 
                 </ShortInfoBtn>
