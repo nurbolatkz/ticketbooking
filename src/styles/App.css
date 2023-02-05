@@ -12,7 +12,27 @@
 body {
     font-family: Inter, sans-serif;
 }
-/* For Seats */
+
+/* SeatPrice style */
+.seatPriceBody hr{
+    color: #9C9C9C;
+}
+.seatPriceBody span{
+    float: right;
+}
+.seatPriceBody{
+    width: 100%;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.seatPriceTitle{
+    text-align: center;
+    font-weight: bold;
+}
+.VIP{
+    color: #DBDBDB;
+}
+/* SeatPlace style */
 
 :root{
 
@@ -82,10 +102,11 @@ body {
   }
 @media screen and (min-width: 200px) {
     .place {
-        
+        margin: 3px;
+        --seat-width:10px;
     }
     .rowNums{
-        margin-inline-start: 0%;
+        margin-inline-start: 0px;
     }
   }
 /* Float four columns side by side */

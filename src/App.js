@@ -17,9 +17,10 @@ import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
 import SelectPlace from './components/SelectPlace';
 import AllInfo from './components/AllInfo';
-
+import SeatPrice from './components/SeatPrice';
 /* ------ import css ------ */
 import './styles/App.css';
+
 
 
 
@@ -196,6 +197,7 @@ const [cards, setCards] = useState([
         <>
            {/* <SelectPlace></SelectPlace> */}
            <CinemaPlace></CinemaPlace>
+           <SeatPrice></SeatPrice>
         </>
        },
     ]);
