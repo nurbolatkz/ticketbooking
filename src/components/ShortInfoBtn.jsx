@@ -11,7 +11,7 @@ const ShortInfoBtn = (props) => {
                 <span>-</span>
                 <span>{props.movie.date}</span>
                 <span>-</span>
-                <span>{props.movie.selectedTime}</span>
+                <span id='selected-movie-time'>{props.movie.selectedTime}</span>
                 <span>-</span>
                 <span>{props.movie.lang}</span>
                 <span>-</span>

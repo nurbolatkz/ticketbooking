@@ -115,6 +115,7 @@ function App() {
     const [cinemaCartItem, setCinemaCartItem] = useState({});
     const [selectedDay, setSelectedDay] = useState();
     const[selectedMovie, setSelectedMovie] =  useState({});
+    const [selectedTime, setSelectedTime] = useState(); 
 
 
     const [snacks, setSnacks] = useState([
@@ -169,10 +170,10 @@ function App() {
         setSelectedDay(day);
     }
 
-    const setMovie = (movie, selectedTime)=>{
-        movie.selectedTime = selectedTime;
+    const setMovie = (movie)=>{
         setSelectedMovie(movie);
     }
+    
     const router = createBrowserRouter([
         {
             path: "/",
@@ -188,8 +189,16 @@ function App() {
             path: "/cinemas/:cinemaId/movies",
             element:
                 <>
-                    <FilmCardList fcards = {fcards} cinema_cards={cards} setSelectedMovie={setMovie}></FilmCardList>
-                    <ShortInfoBtn cinema_card={cinemaCartItem} movie={selectedMovie}></ShortInfoBtn>
+                    <FilmCardList fcards = {fcards}
+                                 cinema_cards={cards}
+                                  setSelectedMovie={setMovie}
+                    ></FilmCardList>
+                    <ShortInfoBtn cinema_card={cinemaCartItem}
+                                  movie={selectedMovie} 
+                                  movie_time={selectedTime}
+                                  >
+
+                    </ShortInfoBtn>
                 </>
         },
 
