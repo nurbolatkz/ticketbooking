@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilmBlock = ({props}) => {
+const FilmBlock = (props) => {
     return(
         <div className='filmBlockBody'>
             <div className='filmInfoBody'>

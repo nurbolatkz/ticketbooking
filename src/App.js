@@ -198,9 +198,10 @@ function App() {
          path: "/test",
          element:
          <>
-            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
             <FilmBlock></FilmBlock>
-            <AllInfo></AllInfo>
+             <AllInfo></AllInfo>
+            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+           
             {/* <SelectPlace></SelectPlace> */}
          </>
         },
