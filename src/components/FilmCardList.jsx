@@ -23,6 +23,7 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
         }
     }
     if (!movies){
+
         return(
             <h1 style={{textAlign: 'center'}}>
             Movies не найдены!
