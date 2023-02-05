@@ -3,7 +3,6 @@ import {
     createBrowserRouter,
     RouterProvider,
     redirect
-    redirect
 } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
