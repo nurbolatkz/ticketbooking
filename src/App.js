@@ -5,33 +5,20 @@ import {
 } from "react-router-dom";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
-import CinemaCard from "./components/CinemaCard";
 import DateOption from "./components/DateOption";
-import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import FilmBlock from './components/FilmBlock';
 import CinemaPlace from './components/CinemaPlace';
 import SnackPage from './components/SnackPage';
-import FilmBlock from './components/FilmBlock';
-import CinemaPlace from './components/CinemaPlace';import SelectPlace from "./components/SelectPlace";
-
-import CinemaInfo from "./components/CinemaInfo";
+import AllInfo from './components/AllInfo';
 import FilmCardList from './components/FilmCardList';
 import SelectPlace from './components/SelectPlace';
+import ShortInfoBtn from './components/ShortInfoBtn';
+import SeatPrice from './components/SeatPrice';
+
 
 /* ------ import css ------ */
 import './styles/App.css';
-import ShortInfoBtn from './components/ShortInfoBtn';
-
-
-
-
-
-
-
-
-
-
 
 
 function App() {
@@ -212,19 +199,10 @@ function App() {
          path: "/test",
          element:
          <>
-            <SnackPage></SnackPage>
             <FilmBlock></FilmBlock>
             <AllInfo></AllInfo>
-            {/* <SelectPlace></SelectPlace> */}
-         </>
-        },
-        {
-         path: "/test",
-         element:
-         <>
-            <SnackPage></SnackPage>
-            <FilmBlock></FilmBlock>
-            <AllInfo></AllInfo>
+            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+            
             {/* <SelectPlace></SelectPlace> */}
          </>
         },

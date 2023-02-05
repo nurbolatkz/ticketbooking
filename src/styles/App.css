@@ -89,6 +89,7 @@ body {
     float: left;
 }
 .leftSide{
+    float: left;
 
 }
 .rightSide{
@@ -413,6 +414,86 @@ body {
 .active-time-btn{
     background: #E3231E;
 }
+
+/* SeatPlace style */
+:root{
+
+    --seat-width:15px;
+    --seat-height: calc(var(--seat-width)*0.8);
+    --grid-seat-width: calc(var(--seat-width)*1.2);
+    --grid-seat-width-end: calc(var(--seat-width)*1.8);
+}
+.screen{
+       background-color: #9C9C9C;
+       transform: rotateX(-50deg);
+       box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+       width: 100%;
+       height: 10px;
+       
+}
+.placeTitle{
+       font-weight: bold;
+       margin-top:20px;
+       text-align: center;
+}
+.cinemaRoom{
+       margin-top: 20px;
+       justify-content: center;
+       display: flex;
+       align-items: stretch;
+}
+.place{
+       border: 2px;
+       border-style:inset;
+       background-color: #BCBCBC;
+       height: var(--seat-height);
+       width: var(--seat-width);
+      
+}
+.place:hover{
+       background-color: #FFB800;
+       transition: 1s;
+}
+.placeContainer {
+       display: flex;
+       justify-content: center;
+       grid-template-columns: repeat(15, var(--grid-seat-width));
+       grid-template-rows: repeat(1, var(--grid-seat-width));
+}
+.rowNums{
+       margin-right: 10px;
+       color:#BCBCBC;
+       font-size: 100%; 
+}
+   
+@media screen and (min-width: 800px) {
+       .place {
+           margin: 3px;
+       }
+       .rowNums{
+           margin-inline-start: 3%;
+       }
+}
+
+@media screen and (min-width: 300px) {
+    .place {
+           margin: 3px;
+    }
+    .rowNums{
+           margin-inline-start: 3%;
+    }
+}
+
+@media screen and (min-width: 200px) {
+    .place {
+           margin: 3px;
+           --seat-width:10px;
+    }
+    .rowNums{
+           margin-inline-start: 0px;
+    }
+}
+
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
 .snack-container{
     display: flex;
@@ -775,4 +856,3 @@ body {
 }
 
 /*!--------------------------------------------- end tablet size screen styles ! --------------------------------------------------------- */
-

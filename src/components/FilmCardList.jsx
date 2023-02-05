@@ -18,7 +18,7 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
 
     for(let i = 0; i<fcards.length; i++){
   
-        if(fcards[i].id == cinemaId){
+        if(fcards[i].id === Number(cinemaId)){
             movies = fcards[i].movies
         }
     }
@@ -29,23 +29,6 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
         </h1>
         )
     }
-
-    movies = fcards.find((x) => x.id === cinemaId);
-
-    for(let i = 0; i<fcards.length; i++){
-  
-        if(fcards[i].id == cinemaId){
-            movies = fcards[i].movies
-        }
-    }
-    if (!movies){
-        return(
-            <h1 style={{textAlign: 'center'}}>
-            Movies не найдены!
-        </h1>
-        )
-    }
-
 
     let cardFilterByTwoElements = [];
     let counter = 0;
@@ -66,7 +49,7 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
         counter++;
     }
     
-    console.log(cardFilterByTwoElements)
+   
 
     return (
         <div className='container'>
