@@ -3,10 +3,10 @@ import React from 'react';
 import SnackList from "./SnackList.jsx";
 
 
-const SnackPage = ({props}) => {
+const SnackPage = (props) => {
     return (
         <div>
-            <SnackList  snack_cards={props.snacks_cards} 
+            <SnackList  snack_cards={props.snack_cards} 
                         addItem={props.addSnack} 
                         removeItem={props.removeSnack}>
                         
