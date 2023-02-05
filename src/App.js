@@ -190,20 +190,27 @@ function App() {
          path: "/test",
          element:
          <>
-            <AllInfo></AllInfo>
-            <FilmBlock></FilmBlock>
-            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
-            
-            {/* <SelectPlace></SelectPlace> */}
+            <div className='filmBlockAll'>
+                <FilmBlock></FilmBlock>
+            </div>
+            <div className='allInfoBlockAll'>
+                <AllInfo></AllInfo>
+            </div>
+            <div className='snackBlockAll'>
+                <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+            </div>
          </>
         },
         {
         path: "/places",
         element:
         <>
-           {/* <SelectPlace></SelectPlace> */}
-           <CinemaPlace></CinemaPlace>
+        <div className='cinemaPlaceBlockAll'>
+            <CinemaPlace></CinemaPlace>
+        </div>
+        <div className='seatPriceBlockAll'>
            <SeatPrice></SeatPrice>
+        </div>
         </>
        },
     ]);

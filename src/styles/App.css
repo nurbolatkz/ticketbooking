@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-
 }
 #root,  .header-container {
     width: 100%;
@@ -8,27 +7,118 @@
     padding: 0;
 }
 
-
 body {
     font-family: Inter, sans-serif;
+    background-color: #EFEFEF;
 }
-/* For Seats */
-.seatBody{
-    display: flex;
-    flex-direction: column;
+/* SeatPrice style */
+.seatPriceBlockAll{
+    margin-top: 20px;
+    background-color: white;
+    padding-block: 10px;
+    box-shadow: 0px -5px 5px 5px rgba(141, 140, 140, 0.7);
+}
+.seatPriceBody hr{
+    color: #9C9C9C;
+}
+.seatPriceBody span{
+    float: right;
+}
+.seatPriceBody{
+ 
+    width: 100%;
+    height: 100%;
+    margin-block: 40px;
+    font-weight: 600;
+}
+.seatPriceTitle{
+    margin-block-end: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.VIP{
+    color: #DBDBDB;
+}
+/* SeatPlace style */
+.cinemaPlaceBlockAll{
+    background-color: white;
+    padding-block: 10px;
+}
+:root{
+ --seat-width:15px;
+ --seat-height: calc(var(--seat-width)*0.8);
+ --grid-seat-width: calc(var(--seat-width)*1.2);
+ --grid-seat-width-end: calc(var(--seat-width)*1.8);
+}
+.screen{
+    background-color: #9C9C9C;
+    box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+    width: 100%;
+    height: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+.placeTitle{
+    font-weight: bold;
+    margin-top:20px;
+    text-align: center;
+}
+.cinemaRoom{
+    margin-top: 20px;
     justify-content: center;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
 }
-#seats-container{
-    display: grid;
-    grid-template-columns: repeat(13, 110px);
-    grid-template-rows: repeat(8,110px);
+.place{
+    border: 2px;
+    border-style:inset;
+    background-color: #BCBCBC;
+    height: var(--seat-height);
+    width: var(--seat-width);
+   
 }
-.seat{
-    height: 102px;
-    width: 100px;
-    background-color: grey;
+.place:hover{
+    background-color: #FFB800;
+    transition: 1s;
 }
+.placeContainer {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(15, var(--grid-seat-width));
+    grid-template-rows: repeat(1, var(--grid-seat-width));
+}
+.rowNums{
+    margin-right: 10px;
+    color:#BCBCBC;
+    font-size: 100%; 
+}
+
+@media screen and (min-width: 800px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 300px) {
+    .place {
+        margin: 3px;
+    }
+    .rowNums{
+        margin-inline-start: 3%;
+    }
+  }
+@media screen and (min-width: 200px) {
+    .place {
+        margin: 3px;
+        --seat-width:10px;
+    }
+    .rowNums{
+        margin-inline-start: 0px;
+    }
+  }
 /* Float four columns side by side */
 /* ----------------------------------------- start of desktop screen styles  -------------------------*/
 .column {
@@ -76,72 +166,297 @@ body {
     clear: both;
 }
 /* Style for the CinemaPlace */
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 8px;
+    }
+}
+@media screen and (min-width: 200px) and (max-width:300px){
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width:700px){
+
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 15px;
+        font-size: 16px;
+    }
+}
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px) and (max-width:1400px){
+
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 15px;
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width:2000px){
+
+    .selectedElements{
+        padding-block: 20px;
+        margin-inline: 25px;
+        font-size: 18px;
+
+    }
+}
+/* MAIN */
+.allInfoBlockAll{
+    margin-top: 15px;
+    background-color:white;
+}
 .cinemaPlaceBody{
-    margin-top: 30%;
-    margin-inline: 1%;
-    font-size: 80%;
+    padding-bottom: 20px;
 }
 .selectedElements{
     font-weight: bold;
-    margin-inline: 1%;
 }
 .leftSide span{
     float: left;
 }
-.leftSide{
-    float: left;
-
-}
 .rightSide{
-
     float: right;
 }
-/* Style for the film block */
+/*********************************** STYLE FOR FILM BLOCK ************************************/
+/* MOBILE */
+@media screen and (min-width: 100px) and (max-width:200px){
+    .filmBlockBody{
+        padding-block: 10px;
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 50px;
+        height: 50px;
+        margin-inline-start: 5px;
+        margin-inline-end: 10px;
+        margin-top: 10px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 20px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 20px;
+    }
+    .filmName{
+        font-size: 10px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 8px;
+    }
+    .filmTime{
+        font-size: 10px;
+    }
+  }
+@media screen and (min-width: 201px) and (max-width:300px){
+    .filmBlockBody{
+        padding-block: 10px;
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 50px;
+        height: 60px;
+        margin-inline-start: 10px;
+        margin-inline-end: 10px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 10px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 10px;
+    }
+    .filmName{
+        font-size: 12px;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 9px;
+    }
+    .filmTime{
+        font-size: 12px;
+    }
+  }
+@media screen and (min-width: 301px) and (max-width:400px){
+    .filmBlockBody{
+        padding-block: 10px;
+        margin-top: 10px;
+    }
+    .filmImage{
+        width: 60px;
+        height: 70px;
+        margin-inline-start: 15px;
+        margin-inline-end: 15px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 15px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 15px;
+    }
+    .filmName{
+        font-size: 15px;
+ 
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 10px;
+    }
+    .filmTime{
+        font-size: 15px;
+ 
+    }
+  }
+  @media screen and (min-width: 400px) and (max-width:700px){
+    .filmBlockBody{
+        padding-block: 15px;
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 70px;
+        height: 80px;
+        margin-inline-start: 15px;
+        margin-inline-end: 20px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 20px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 20px;
+    }
+    .filmName{
+        font-size: 16px;
+        
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 11px;
+    }
+    .filmTime{
+        font-size: 16px;
+ 
+    }
+  }
+/* IPAD's */
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .filmBlockBody{
+        padding-block: 20px;
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 120px;
+        margin-inline-start: 15px;
+        margin-inline-end: 25px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 20px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 20px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+/* DESKTOP AND ETC. */
+@media screen and (min-width: 1000px){
+    .filmBlockBody{
+        padding-block: 20px;
+        margin-top: 15px;
+    }
+    .filmImage{
+        width: 100px;
+        height: 120px;
+        margin-inline-start: 15px;
+        margin-inline-end: 25px;
+    }
+    .filmInfoBlockOne{
+        margin-top: 20px;
+    }
+    .filmInfoBlockTwo{
+        margin-top: 20px;
+    }
+    .filmName{
+        font-size: 24px;
+        display: flex;
+    }
+    .filmAgeAccess, .filmLang{
+        font-size: 16px;
+    }
+    .filmTime{
+        font-size: 24px;
+        display: flex;
+    }
+  }
+  
+/*MAIN*/
+
 .filmBlockBody{
-    margin-top: 5%;
+    background-color: white;
     width: 100%;
-    text-align:start;
+    text-align:start;  
 }
-.filmImage{
-    margin-inline-start: 1%;
-    margin-inline-end: 5%;
-    width: 17%;
-    float: left;
-
-}
-
-.filmInfoBlockOne{
-    width: 25%;
-    float: left;
-    display: grid;
-}
-.filmInfoBlockTwo{
-    width: 45%;
-    float: right;
-    display: grid;
-
+.filmInfoBody{
+    display: flex;
 }
 .filmTime{
-    font-size: 80%;
-    font-weight: bold;
+    font-weight: 550;
+}
+.filmInfoBlockOne{
+    width: 40%;
+    height: 35%;
+}
+.filmInfoBlockTwo{
+    width: 50%;
+    height: 35%;
 }
 .filmAgeAccess, .filmLang{
-    font-size: small;
     color: #9C9C9C;
 }
 .filmName{
     color: #E3231E;
-    font-weight: bold;
-    font-size: 80%;
+    font-weight: 550;
 }
 
-
-
 /* Style for the green component */
+@media screen and (min-width: 100px) and (max-width:500px){
+    .selectedBody{
+       font-size: 14px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    .selectedBody{
+       font-size: 16px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width:1000px){
+    .selectedBody{
+       font-size: 18px;
+    }
+}
 .selectedBody{
     text-align: center;
     width: 100%;
-
 }
 .selectedBody span{
     padding: 1%;
@@ -152,11 +467,11 @@ body {
     width: 100%;
     background: #1CC641;
     text-align: center;
-    padding: 2%;
+    padding: 1.5%;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-weight: 400;
-    margin-top: 5%;
+
 }
 /* Style the counter cards */
 .card {
@@ -292,48 +607,34 @@ body {
 }
 
 .suggest-date-body{
-    background: #F8F8F8;
-    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
-}
-.suggest-date-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: #F8F8F8;
-    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
 
+    background: #F8F8F8;
+    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
 }
 .modal-content{
     display: flex;
     justify-content: center;
 }
 .suggest-title {
-
     font-family: 'Inter';
     font-weight: 900;
-    font-size: 150%;
     text-align: center;
     text-transform: uppercase;
     color: #000000;
 }
 .date-block {
     text-align: left;
-    margin-inline: 10%;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-
+}
+.date-block a{
+    text-decoration: none;
 }
 
 .date-block h5 {
-    padding: 5%;
-    height: 5%;
-    width: 100%;
     font-family: 'Inter';
-    font-weight: 600;
-    font-size: 100%;
-    margin-left: 6%;
+    font-weight: 400;
     color: #FFFFFF;
 
 }
@@ -415,86 +716,17 @@ body {
     background: #E3231E;
 }
 
-/* SeatPlace style */
-:root{
-
-    --seat-width:15px;
-    --seat-height: calc(var(--seat-width)*0.8);
-    --grid-seat-width: calc(var(--seat-width)*1.2);
-    --grid-seat-width-end: calc(var(--seat-width)*1.8);
-}
-.screen{
-       background-color: #9C9C9C;
-       transform: rotateX(-50deg);
-       box-shadow: 0 3px 10px rgba(255,255,255,0.7);
-       width: 100%;
-       height: 10px;
-       
-}
-.placeTitle{
-       font-weight: bold;
-       margin-top:20px;
-       text-align: center;
-}
-.cinemaRoom{
-       margin-top: 20px;
-       justify-content: center;
-       display: flex;
-       align-items: stretch;
-}
-.place{
-       border: 2px;
-       border-style:inset;
-       background-color: #BCBCBC;
-       height: var(--seat-height);
-       width: var(--seat-width);
-      
-}
-.place:hover{
-       background-color: #FFB800;
-       transition: 1s;
-}
-.placeContainer {
-       display: flex;
-       justify-content: center;
-       grid-template-columns: repeat(15, var(--grid-seat-width));
-       grid-template-rows: repeat(1, var(--grid-seat-width));
-}
-.rowNums{
-       margin-right: 10px;
-       color:#BCBCBC;
-       font-size: 100%; 
-}
-   
-@media screen and (min-width: 800px) {
-       .place {
-           margin: 3px;
-       }
-       .rowNums{
-           margin-inline-start: 3%;
-       }
-}
-
-@media screen and (min-width: 300px) {
-    .place {
-           margin: 3px;
-    }
-    .rowNums{
-           margin-inline-start: 3%;
-    }
-}
-
-@media screen and (min-width: 200px) {
-    .place {
-           margin: 3px;
-           --seat-width:10px;
-    }
-    .rowNums{
-           margin-inline-start: 0px;
-    }
-}
 
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snackBlockAll{
+    background-color: white;
+    margin-top: 15px;
+}
+.snaksTitle{
+    padding: 20px;
+    color: #E3231E;
+    font-weight: 600;
+}
 .snack-container{
     display: flex;
     flex-wrap: wrap;
@@ -560,8 +792,6 @@ body {
         margin-right: 40px;
     }
 }
-
-
 
 
 #today {
@@ -700,7 +930,7 @@ body {
 /*-------------------------------------- end of desktop screen styles ----------------------------------------------------*/
  /*!------------------------------------ start for mobile size screen ------------------------------------------- */
 
-@media screen and (max-width: 600px) {
+ @media screen and (min-width: 150px) and (max-width: 350px){
     .column {
         width: 50%;
         display: block;
@@ -728,26 +958,25 @@ body {
     .card {
         width: 100%;
         background: #F1F1F1;
-        height: 180px;
+        height: 150px;
         text-align: center;
         background-color: #f1f1f1;
         margin-top: 16px;
         padding: 4px;
-        margin-right: 33px;
         box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
     }
 
     .card img {
-        height: 75px;
-        width: 110px;
+        height: 40px;
+        width: 50px;
         border-radius: 290px;
     }
 
     .card-body h5 {
         height: 13px;
         font-family: Inter;
-        font-size: 18px;
+        font-size: 12px;
         font-weight: 500;
         line-height: 12px;
         letter-spacing: 0em;
@@ -756,12 +985,79 @@ body {
     }
 
     .card-body button {
-        margin-bottom: 5px;
-        height: 27px;
-        width: 90px;
+
+        height: 22px;
+        width: 60px;
         border-radius: 16px;
         background: #E3231E;
-        border-radius: 16px;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+    } 
+}
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        padding: 0 20px;
+
+    }
+
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 240px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 10px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 80px;
+        width: 110px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .card-body button {
+        height: 35px;
+        width: 100px;
+        border-radius: 12px;
+        background: #E3231E;
         border: transparent;
         color: #fff;
         font-family: Inter;
@@ -769,17 +1065,82 @@ body {
         font-weight: 500;
         line-height: 20px;
         letter-spacing: 0em;
+    } 
+}
+@media screen and (min-width: 450px) and (max-width: 750px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        padding: 0 20px;
+
+    }
+
+    .container h1 {
+        height: 20px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        margin-left: -30px;
+        font-family: Inter;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
         text-align: center;
     }
 
-  
+    .card {
+        width: 100%;
+        background: #F1F1F1;
+        height: 240px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin-top: 16px;
+        padding: 10px;
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img {
+        height: 100px;
+        width: 160px;
+        border-radius: 290px;
+    }
+
+    .card-body h5 {
+        height: 13px;
+        font-family: Inter;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        margin-top: -15px;
+        margin-bottom: 20px;
+    }
+
+    .card-body button {
+        height: 35px;
+        width: 120px;
+        border-radius: 12px;
+        background: #E3231E;
+        border: transparent;
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+    } 
 }
+
 /*!------------------------------------ end for mobile size screen ------------------------------------------- */
 
 /*!--------------------------------------------- for tablet size screen styles ! --------------------------------------------------------- */
 
-
-@media screen and (min-width: 750px) and (max-width: 1100px) {
+@media screen and (min-width: 750px) and (max-width: 1200px) {
     .column {
         width: 50%;
         display: block;
@@ -787,7 +1148,7 @@ body {
     }
 
     .row {
-        padding-left: 50px;
+        padding-left: 120px;
     }
 
     .container h1 {
@@ -796,7 +1157,7 @@ body {
         margin-bottom: 30px;
         margin-left: -33px;
         font-family: Inter;
-        font-size: 30px;
+        font-size: 32px;
         font-weight: 700;
         line-height: 30px;
         letter-spacing: 0em;
@@ -818,7 +1179,7 @@ body {
 
     .card img {
         height: 130px;
-        width: 220px;
+        width: 200px;
         border-radius: 290px;
     }
 
@@ -854,6 +1215,5 @@ body {
 
 
 }
-
 /*!--------------------------------------------- end tablet size screen styles ! --------------------------------------------------------- */
 
