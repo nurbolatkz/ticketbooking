@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     createBrowserRouter,
     RouterProvider,
+    redirect
     redirect
 } from "react-router-dom";
 /* ------ import component ------ */
@@ -12,7 +13,8 @@ import SnackList from "./components/SnackList.jsx";
 import Modal from "./components/Modal";
 import SnackPage from './components/SnackPage';
 import FilmBlock from './components/FilmBlock';
-import CinemaPlace from './components/CinemaPlace';
+import CinemaPlace from './components/CinemaPlace';import SelectPlace from "./components/SelectPlace";
+
 import CinemaInfo from "./components/CinemaInfo";
 import FilmCardList from './components/FilmCardList';
 import SelectPlace from './components/SelectPlace';
@@ -34,7 +36,7 @@ import './styles/App.css';
 function App() {
 
 
-const [cards, setCards] = useState([
+    const [cards, setCards] = useState([
 
         {id:1, address: 'KINO1', img_src: 'logo.jpg'},
         {id:2, address: 'KINO2', img_src: 'logo.jpg'},
@@ -44,6 +46,18 @@ const [cards, setCards] = useState([
 
     ])
 
+    /*
+    const [cards, setCards] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:8000/cinemas/', {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+            },})
+            .then(res => console.log(res))
+            .then(data => {setCards(data)})
+    })
+*/
     const [fcards, setFCards] = useState([
         {
            id: 1,

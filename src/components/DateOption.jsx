@@ -3,8 +3,25 @@ import {
     Link
 } from "react-router-dom";
 const DateOption = ({selectDay, setActiveModal}) => {
+
+    function getDateByOption(option) {
+
+        var today = new Date();
+        var dd;
+        if (option === "today") {
+            dd = String(today.getDate()).padStart(2, '0');
+        }else{
+            dd = String(today.getDate() + 1).padStart(2, '0');
+        }
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        return today;
+    }
     const selectDate = (day) => {
-        selectDay(day);
+        let new_day = getDateByOption(day);
+        selectDay(new_day);
         setActiveModal(false);
     }
     return (
