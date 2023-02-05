@@ -3,14 +3,17 @@ import React from 'react';
 const SeatPrice = ({props}) => {
     return (
         <div className='seatPriceBody'>
-            <div className='seatPriceTitle'>5 ряд 10 место</div>
+            <div className='seatPriceTitle'>
+                <label id='placeRowId'> 1 </label>  ряд
+                <label id='placeColId'> 1 </label>  место
+            </div>
             <div className='seatPriceElements'>
                 <hr></hr>
                     <text>Взрослый</text>
-                    <span>2000 тг</span>
+                    <span id='priceOfPlaceForAdult'>2000 тг</span>
                 <hr></hr>
                     <text>Студенческий</text>
-                    <span>2000 тг</span>
+                    <span id='priceOfPlaceForStudent'>2000 тг</span>
                 <hr></hr>
                     <text className='VIP'>VIP</text>
             </div>

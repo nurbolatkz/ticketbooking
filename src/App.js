@@ -109,8 +109,9 @@ function App() {
     const [isModalActive, setIsModalActive] = useState(false);
     const [cinemaCartItem, setCinemaCartItem] = useState({});
     const [selectedDay, setSelectedDay] = useState();
-    const[selectedMovie, setSelectedMovie] =  useState({});
-    const [selectedTime, setSelectedTime] = useState(); 
+    const [selectedMovie, setSelectedMovie] =  useState({});
+    const [selectedTime, setSelectedTime] = useState();
+    const [selectedPlace, setSelectedPlace] = useState({});
 
 
     const [snacks, setSnacks] = useState([
@@ -168,7 +169,9 @@ function App() {
     const setMovie = (movie)=>{
         setSelectedMovie(movie);
     }
-    
+
+
+
     const router = createBrowserRouter([
         {
             path: "/",
@@ -200,29 +203,63 @@ function App() {
                 </>
         },
         {
-         path: "/test",
-         element:
-         <>
-            <FilmBlock></FilmBlock>
-             <AllInfo></AllInfo>
-            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
-           
-            {/* <SelectPlace></SelectPlace> */}
-         </>
+            path: "/payment",
+            element:
+                <>
+                    <div className='filmBlockAll'>
+                        <FilmBlock></FilmBlock>
+                    </div>
+                    <div className='allInfoBlockAll'>
+                        <AllInfo></AllInfo>
+                    </div>
+                    <div className='snackBlockAll'>
+                        <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+                    </div>
+                </>
+        },
+        {
+            path: "/places",
+            element:
+                <>
+                    <div className='filmBlockAll'>
+                        <FilmBlock></FilmBlock>
+                    </div>
+                    <div className='cinemaPlaceBlockAll'>
+                        <CinemaPlace></CinemaPlace>
+                    </div>
+                    <div className='seatPriceBlockAll'>
+                        <SeatPrice></SeatPrice>
+                    </div>
+
+                    <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
+                        <ShortInfoBtn cinema_card={cinemaCartItem}
+                                      movie={selectedMovie}
+                                      movie_time={selectedTime}
+                        >
+
+                        </ShortInfoBtn>
+                    </Link>
+
+                </>
         },
        
         {
         path: "/places",
         element:
         <>
-
             <FilmBlock></FilmBlock>
+            <CinemaPlace setDetailOfPlace={()=>setSelectedPlace}></CinemaPlace>
+            <SeatPrice></SeatPrice>
 
-            <div>
-                <CinemaPlace></CinemaPlace>
-                <SeatPrice></SeatPrice>
-            </div>
+            <Link to={`/cinemas/${cinemaCartItem.id}/movies`}>
+                <ShortInfoBtn cinema_card={cinemaCartItem}
+                              movie={selectedMovie}
+                              movie_time={selectedTime}
+                >
 
+                </ShortInfoBtn>
+            </Link>
+            { /* <FilmBlock></FilmBlock> */}
 
         </>
        },

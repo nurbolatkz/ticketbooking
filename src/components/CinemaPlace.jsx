@@ -2,21 +2,40 @@ import React from 'react';
 
 
 const PlaceElement = (props) =>{
-    // console.log("test "+props.detail.row)
-    console.log("test "+props.detail.placePrice)
+    function handleClick(e){
+
+        const rowspan =  document.getElementById('placeRowId');
+        const colspan =  document.getElementById('placeColId');
+        const priceForAdult =  document.getElementById('priceOfPlaceForAdult');
+        const priceForStudent =  document.getElementById('priceOfPlaceForStudent');
+        let placeInfo = {
+            rowId: props.details.row,
+            colId: props.columnId,
+            price: props.details.placePrice
+        }
+
+
+        rowspan.innerHTML = props.details.row + '  ';
+        colspan.innerHTML = '  ' +  props.columnId + '  ';
+        priceForStudent.innerHTML = props.details.placePrice;
+        priceForAdult.innerHTML = props.details.placePrice + 800;
+
+        props.setPlaceInfo(placeInfo);
+
+
+    }
     return(
-        <div className="place">
+        <div className="place" onClick={()=>handleClick()}>
         </div>
     )
 }
 
 const PlaceContainer = (props) =>{
-    
-    console.log(props);
+
     const placeElements = [];
     for(let i = 0; i < props.numberPlaces; i++){
         
-        placeElements.push(<PlaceElement detail = {props}></PlaceElement>)
+        placeElements.push(<PlaceElement details = {props} columnId={i+1}></PlaceElement>)
     }
     return(
             <div className="placeContainer">
@@ -91,7 +110,14 @@ const CinemaPlace = (props) =>{
                         </div>
                         )}</div>
                     <div className="allPlaceContainer">
-                        {places.map((place) => <PlaceContainer numberPlaces={place.placesInRow} placePrice={place.price} row={place.rowOrder}></PlaceContainer>
+                        {places.map((place) =>
+                            <PlaceContainer
+                                    numberPlaces={place.placesInRow}
+                                    placePrice={place.price}
+                                    row={place.rowOrder}
+                                    setPlaceInfo={props.setDetailOfPlace}>
+
+                            </PlaceContainer>
 
                         )}</div></>}
             </div></>

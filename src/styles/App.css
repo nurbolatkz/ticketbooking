@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-
 }
 #root,  .header-container {
     width: 100%;
@@ -8,16 +7,16 @@
     padding: 0;
 }
 
-.lineBlock{
-    margin:0;
-    padding: 0;
-    height: 40px;
-    background-color: #9C9C9C;
-}
 body {
     font-family: Inter, sans-serif;
+    background-color: #EFEFEF;
 }
 /* SeatPrice style */
+.seatPriceBlockAll{
+    margin-top: 20px;
+    background-color: white;
+    padding-block: 10px;
+}
 .seatPriceBody hr{
     color: #9C9C9C;
 }
@@ -26,10 +25,12 @@ body {
 }
 .seatPriceBody{
     width: 100%;
-    margin-top: 20px;
+    height: 100%;
+    margin-block: 40px;
     font-weight: 600;
 }
 .seatPriceTitle{
+    margin-block-end: 30px;
     text-align: center;
     font-weight: bold;
 }
@@ -37,9 +38,11 @@ body {
     color: #DBDBDB;
 }
 /* SeatPlace style */
-
+.cinemaPlaceBlockAll{
+    background-color: white;
+    padding-block: 10px;
+}
 :root{
-
  --seat-width:15px;
  --seat-height: calc(var(--seat-width)*0.8);
  --grid-seat-width: calc(var(--seat-width)*1.2);
@@ -162,31 +165,22 @@ body {
 /* Style for the CinemaPlace */
 /* MOBILE */
 @media screen and (min-width: 100px) and (max-width:200px){
-    .cinemaPlaceBody{
-        padding-block: 100px;
 
+    .selectedElements{
+        margin-inline: 10px;
+        padding-block: 20px;
+        font-size: 8px;
     }
+}
+@media screen and (min-width: 200px) and (max-width:300px){
     .selectedElements{
         margin-inline: 10px;
         padding-block: 20px;
         font-size: 10px;
     }
 }
-@media screen and (min-width: 200px) and (max-width:500px){
-    .cinemaPlaceBody{
-        padding-block: 100px;
+@media screen and (min-width: 300px) and (max-width:700px){
 
-    }
-    .selectedElements{
-        margin-inline: 5px;
-        padding-block: 5px;
-        font-size: 12px;
-    }
-}
-@media screen and (min-width: 500px) and (max-width:700px){
-    .cinemaPlaceBody{
-        padding-block: 80px;
-    }
     .selectedElements{
         margin-inline: 10px;
         padding-block: 20px;
@@ -194,9 +188,7 @@ body {
     }
 }
 @media screen and (min-width: 700px) and (max-width:1000px){
-    .cinemaPlaceBody{
-        padding-block: 120px;
-    }
+
     .selectedElements{
         padding-block: 20px;
         margin-inline: 15px;
@@ -205,10 +197,7 @@ body {
 }
 /* DESKTOP AND ETC. */
 @media screen and (min-width: 1000px) and (max-width:1400px){
-    .cinemaPlaceBody{
-        font-size: 14px;
-        padding-block: 120px;
-    }
+
     .selectedElements{
         padding-block: 20px;
         margin-inline: 15px;
@@ -216,10 +205,7 @@ body {
     }
 }
 @media screen and (min-width: 1400px) and (max-width:2000px){
-    .cinemaPlaceBody{
-        font-size: 14px;
-        padding-block: 130px;
-    }
+
     .selectedElements{
         padding-block: 20px;
         margin-inline: 25px;
@@ -228,7 +214,12 @@ body {
     }
 }
 /* MAIN */
+.allInfoBlockAll{
+    margin-top: 15px;
+    background-color:white;
+}
 .cinemaPlaceBody{
+    padding-bottom: 20px;
 }
 .selectedElements{
     font-weight: bold;
@@ -243,62 +234,54 @@ body {
 /* MOBILE */
 @media screen and (min-width: 100px) and (max-width:200px){
     .filmBlockBody{
+        padding-block: 10px;
         margin-top: 15px;
     }
     .filmImage{
-        width: 70px;
-        height: 80px;
-        text-align: center;
-
+        width: 50px;
+        height: 50px;
+        margin-inline-start: 5px;
+        margin-inline-end: 10px;
+        margin-top: 10px;
     }
     .filmInfoBlockOne{
-        width: 70px;
-        height: 60px;
-        padding-block: 5px;
-        text-align: center;
+        margin-top: 20px;
     }
     .filmInfoBlockTwo{
-        float: left;
-        width: 60px;
-        height: 60px;
-        padding-block: 5px;
-        text-align: center;
+        margin-top: 20px;
     }
     .filmName{
-        font-size: 12px;
-    }
-    .filmAgeAccess, .filmLang{
         font-size: 10px;
     }
+    .filmAgeAccess, .filmLang{
+        font-size: 8px;
+    }
     .filmTime{
-        font-size: 12px;
+        font-size: 10px;
     }
   }
 @media screen and (min-width: 201px) and (max-width:300px){
     .filmBlockBody{
+        padding-block: 10px;
         margin-top: 15px;
     }
     .filmImage{
         width: 50px;
         height: 60px;
-        margin-inline-start: 5px;
+        margin-inline-start: 10px;
         margin-inline-end: 10px;
     }
     .filmInfoBlockOne{
-        width: 30px;
-        height: 60px;
-        padding-block: 5px;
+        margin-top: 10px;
     }
     .filmInfoBlockTwo{
-        width: 70px;
-        height: 60px;
-        padding-block: 5px;
+        margin-top: 10px;
     }
     .filmName{
         font-size: 12px;
     }
     .filmAgeAccess, .filmLang{
-        font-size: 10px;
+        font-size: 9px;
     }
     .filmTime{
         font-size: 12px;
@@ -306,59 +289,53 @@ body {
   }
 @media screen and (min-width: 301px) and (max-width:400px){
     .filmBlockBody{
-        margin-top: 15px;
+        padding-block: 10px;
+        margin-top: 10px;
     }
     .filmImage{
         width: 60px;
         height: 70px;
-        margin-inline-start: 5px;
+        margin-inline-start: 15px;
         margin-inline-end: 15px;
     }
     .filmInfoBlockOne{
-        width: 50px;
-        height: 70px;
-        padding-block: 10px;
+        margin-top: 15px;
     }
     .filmInfoBlockTwo{
-        width: 130px;
-        height: 80px;
-        padding-block: 10px;
+        margin-top: 15px;
     }
     .filmName{
-        font-size: 16px;
+        font-size: 15px;
  
     }
     .filmAgeAccess, .filmLang{
-        font-size: 11px;
+        font-size: 10px;
     }
     .filmTime{
-        font-size: 16px;
+        font-size: 15px;
  
     }
   }
   @media screen and (min-width: 400px) and (max-width:700px){
     .filmBlockBody{
+        padding-block: 15px;
         margin-top: 15px;
     }
     .filmImage{
         width: 70px;
         height: 80px;
-        margin-inline-start: 5px;
+        margin-inline-start: 15px;
         margin-inline-end: 20px;
     }
     .filmInfoBlockOne{
-        width: 70px;
-        height: 80px;
-        padding-block: 20px;
+        margin-top: 20px;
     }
     .filmInfoBlockTwo{
-        width: 200px;
-        height: 80px;
-        padding-block: 20px;
+        margin-top: 20px;
     }
     .filmName{
         font-size: 16px;
- 
+        
     }
     .filmAgeAccess, .filmLang{
         font-size: 11px;
@@ -369,8 +346,9 @@ body {
     }
   }
 /* IPAD's */
-  @media screen and (min-width: 700px) and (max-width:1000px){
+@media screen and (min-width: 700px) and (max-width:1000px){
     .filmBlockBody{
+        padding-block: 20px;
         margin-top: 15px;
     }
     .filmImage{
@@ -380,15 +358,10 @@ body {
         margin-inline-end: 25px;
     }
     .filmInfoBlockOne{
-        width: 150px;
-        height: 140px;
-        padding-block: 25px;
-        
+        margin-top: 20px;
     }
     .filmInfoBlockTwo{
-        width: 350px;
-        height: 140px;
-        padding-block: 25px;
+        margin-top: 20px;
     }
     .filmName{
         font-size: 24px;
@@ -403,26 +376,22 @@ body {
     }
   }
 /* DESKTOP AND ETC. */
-@media screen and (min-width: 1000px) and (max-width:1400px){
+@media screen and (min-width: 1000px){
     .filmBlockBody{
+        padding-block: 20px;
         margin-top: 15px;
     }
     .filmImage{
         width: 100px;
-        height: 110px;
+        height: 120px;
         margin-inline-start: 15px;
-        margin-inline-end: 30px;
+        margin-inline-end: 25px;
     }
     .filmInfoBlockOne{
-        width: 200px;
-        height: 140px;
-        padding-block: 25px;
-        
+        margin-top: 20px;
     }
     .filmInfoBlockTwo{
-        width: 600px;
-        height: 140px;
-        padding-block: 25px;
+        margin-top: 20px;
     }
     .filmName{
         font-size: 24px;
@@ -436,55 +405,27 @@ body {
         display: flex;
     }
   }
-  @media screen and (min-width: 1400px) and (max-width:2000px){
-    .filmBlockBody{
-        margin-top: 15px;
-    }
-    .filmImage{
-        width: 120px;
-        height: 135px;
-        margin-inline-start: 25px;
-        margin-inline-end: 40px;
-    }
-    .filmInfoBlockOne{
-        width: 200px;
-        height: 140px;
-        padding-block: 35px;
-        
-    }
-    .filmInfoBlockTwo{
-        width: 900px;
-        height: 140px;
-        padding-block: 35px;
-    }
-    .filmName{
-        font-size: 24px;
-        display: flex;
-    }
-    .filmAgeAccess, .filmLang{
-        font-size: 16px;
-    }
-    .filmTime{
-        font-size: 24px;
-        display: flex;
-    }
-  }
+  
 /*MAIN*/
+
 .filmBlockBody{
+    background-color: white;
     width: 100%;
     text-align:start;  
 }
-.filmImage{
-    float: left;
-}
-.filmInfoBlockOne{
-    float: left;
-}
-.filmInfoBlockTwo{
-    float: right;
+.filmInfoBody{
+    display: flex;
 }
 .filmTime{
     font-weight: 550;
+}
+.filmInfoBlockOne{
+    width: 40%;
+    height: 35%;
+}
+.filmInfoBlockTwo{
+    width: 50%;
+    height: 35%;
 }
 .filmAgeAccess, .filmLang{
     color: #9C9C9C;
@@ -774,8 +715,12 @@ body {
 
 
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
+.snackBlockAll{
+    background-color: white;
+    margin-top: 15px;
+}
 .snaksTitle{
-    margin-inline: 10px;
+    padding: 20px;
     color: #E3231E;
     font-weight: 600;
 }
@@ -844,8 +789,6 @@ body {
         margin-right: 40px;
     }
 }
-
-
 
 
 #today {
@@ -1053,7 +996,7 @@ body {
         letter-spacing: 0em;
     } 
 }
-@media screen and (min-width: 300px) and (max-width: 600px){
+@media screen and (min-width: 350px) and (max-width: 450px) {
     .column {
         width: 50%;
         display: block;
@@ -1071,7 +1014,7 @@ body {
         margin-bottom: 15px;
         margin-left: -30px;
         font-family: Inter;
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 700;
         line-height: 20px;
         letter-spacing: 0em;
@@ -1081,18 +1024,17 @@ body {
     .card {
         width: 100%;
         background: #F1F1F1;
-        height: 180px;
+        height: 240px;
         text-align: center;
         background-color: #f1f1f1;
         margin-top: 16px;
-        padding: 4px;
-        margin-right: 33px;
+        padding: 10px;
         box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
     }
 
     .card img {
-        height: 75px;
+        height: 80px;
         width: 110px;
         border-radius: 290px;
     }
@@ -1100,7 +1042,7 @@ body {
     .card-body h5 {
         height: 13px;
         font-family: Inter;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 500;
         line-height: 12px;
         letter-spacing: 0em;
@@ -1109,12 +1051,10 @@ body {
     }
 
     .card-body button {
-        margin-bottom: 5px;
-        height: 27px;
-        width: 90px;
-        border-radius: 16px;
+        height: 35px;
+        width: 100px;
+        border-radius: 12px;
         background: #E3231E;
-        border-radius: 16px;
         border: transparent;
         color: #fff;
         font-family: Inter;
@@ -1122,10 +1062,9 @@ body {
         font-weight: 500;
         line-height: 20px;
         letter-spacing: 0em;
-        text-align: center;
-    }
+    } 
 }
- @media screen and (min-width: 600px) {
+@media screen and (min-width: 450px) and (max-width: 750px) {
     .column {
         width: 50%;
         display: block;
@@ -1143,7 +1082,7 @@ body {
         margin-bottom: 15px;
         margin-left: -30px;
         font-family: Inter;
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 700;
         line-height: 20px;
         letter-spacing: 0em;
@@ -1153,26 +1092,25 @@ body {
     .card {
         width: 100%;
         background: #F1F1F1;
-        height: 180px;
+        height: 240px;
         text-align: center;
         background-color: #f1f1f1;
         margin-top: 16px;
-        padding: 4px;
-        margin-right: 33px;
+        padding: 10px;
         box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
     }
 
     .card img {
-        height: 75px;
-        width: 110px;
+        height: 100px;
+        width: 160px;
         border-radius: 290px;
     }
 
     .card-body h5 {
         height: 13px;
         font-family: Inter;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 500;
         line-height: 12px;
         letter-spacing: 0em;
@@ -1181,12 +1119,10 @@ body {
     }
 
     .card-body button {
-        margin-bottom: 5px;
-        height: 27px;
-        width: 90px;
-        border-radius: 16px;
+        height: 35px;
+        width: 120px;
+        border-radius: 12px;
         background: #E3231E;
-        border-radius: 16px;
         border: transparent;
         color: #fff;
         font-family: Inter;
@@ -1194,17 +1130,14 @@ body {
         font-weight: 500;
         line-height: 20px;
         letter-spacing: 0em;
-        text-align: center;
-    }
-
-  
+    } 
 }
+
 /*!------------------------------------ end for mobile size screen ------------------------------------------- */
 
 /*!--------------------------------------------- for tablet size screen styles ! --------------------------------------------------------- */
 
-
-@media screen and (min-width: 750px) and (max-width: 1100px) {
+@media screen and (min-width: 750px) and (max-width: 1200px) {
     .column {
         width: 50%;
         display: block;
@@ -1212,7 +1145,7 @@ body {
     }
 
     .row {
-        padding-left: 50px;
+        padding-left: 120px;
     }
 
     .container h1 {
@@ -1221,7 +1154,7 @@ body {
         margin-bottom: 30px;
         margin-left: -33px;
         font-family: Inter;
-        font-size: 30px;
+        font-size: 32px;
         font-weight: 700;
         line-height: 30px;
         letter-spacing: 0em;
@@ -1243,7 +1176,7 @@ body {
 
     .card img {
         height: 130px;
-        width: 220px;
+        width: 200px;
         border-radius: 290px;
     }
 
@@ -1279,6 +1212,5 @@ body {
 
 
 }
-
 /*!--------------------------------------------- end tablet size screen styles ! --------------------------------------------------------- */
 
