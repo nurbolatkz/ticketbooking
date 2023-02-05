@@ -10,7 +10,7 @@ import DateOption from "./components/DateOption";
 import Modal from "./components/Modal";
 import FilmBlock from './components/FilmBlock';
 import CinemaPlace from './components/CinemaPlace';
-
+import SnackPage from './components/SnackPage';
 
 import FilmCardList from './components/FilmCardList';
 import AllInfo from './components/AllInfo';
@@ -18,14 +18,6 @@ import SeatPrice from './components/SeatPrice';
 /* ------ import css ------ */
 import './styles/App.css';
 import ShortInfoBtn from './components/ShortInfoBtn';
-
-
-
-
-
-
-
-
 
 
 
@@ -169,12 +161,10 @@ function App() {
 
     const selectDayOption = (day) => {
         setSelectedDay(day);
-        console.log(selectedDay);
         redirect('/cinemas');
     }
 
     const setMovie = (movie, selectedTime)=>{
-        movie.selectedTime = selectedTime;
         setSelectedMovie(movie);
     }
     const router = createBrowserRouter([
@@ -184,7 +174,7 @@ function App() {
                 <>
                     <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
                     <Modal active={isModalActive} setActive={setIsModalActive}>
-                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption}></DateOption>
+                        <DateOption setActiveModal={setIsModalActive} selectDay={selectDayOption} cinema_cart={cinemaCartItem}></DateOption>
                     </Modal>
                 </>,
         },
@@ -200,7 +190,7 @@ function App() {
          path: "/test",
          element:
          <>
-            <SnackPage></SnackPage>
+            <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
             <FilmBlock></FilmBlock>
             <AllInfo></AllInfo>
             {/* <SelectPlace></SelectPlace> */}
