@@ -291,6 +291,9 @@ body {
 }
 
 .suggest-date-body{
+    background: #F8F8F8;
+    box-shadow: 0px 6px 85px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
 }
 .suggest-date-container {
     width: 100%;
