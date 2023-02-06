@@ -19,7 +19,7 @@ const SeatPrice = (props) => {
             price = parseInt(priceSpan.innerHTML);
         }
         props.setTypeOfPlace(type, price);
-        navigateTo("/payment");
+        navigateTo("/ticketbooking/payment");
     }
 
 

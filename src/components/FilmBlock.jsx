@@ -4,7 +4,7 @@ const FilmBlock = (props) => {
     return(
         <div className='filmBlockBody'>
             <div className='filmInfoBody'>
-                <img className='filmImage' src='/imgs/babylon.jpg'></img>
+                <img className='filmImage' src='babylon.jpg'></img>
                    <div className='filmInfoBlockOne'>
                         <span className='filmName'>{props.movie.film_name}</span><br></br>
                         <span className='filmLang'>Язык: {props.movie.lang}</span>
