@@ -32,12 +32,12 @@ const DateOption = ({selectDay, setActiveModal, cinema_cart}) => {
             <h4 className='suggest-title'> ВЫБОР ДАТЫ</h4>
             <div>
                 <div className='date-block' id='today' onClick={()=>selectDate('today')}>
-                    <Link  to={`/cinemas/${cinema_cart.id}/movies`}>
+                    <Link  to={`/ticketbooking/cinemas/${cinema_cart.id}/movies`}>
                         <h5>Сегодня в кино</h5>
                     </Link>
                 </div>
                 <div className='date-block' id='tomorrow'  onClick={()=>selectDate('tomorrow')}>
-                    <Link to={`/cinemas/${cinema_cart.id}/movies`}>
+                    <Link to={`/ticketbooking/cinemas/${cinema_cart.id}/movies`}>
                         <h5>На завтра</h5>
                     </Link>
                 </div>

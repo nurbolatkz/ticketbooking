@@ -198,7 +198,7 @@ function App() {
 
     const router = createBrowserRouter([
         {
-            path: "/",
+            path: "/ticketbooking",
             element:
                 <>
                     <CinemaCardList cards ={cards} setActiveModal={setIsModalActive} addCinemaCart={addCinemaCartItem}></CinemaCardList>
@@ -208,14 +208,14 @@ function App() {
                 </>,
         },
         {
-            path: "/cinemas/:cinemaId/movies",
+            path: "/ticketbooking/cinemas/:cinemaId/movies",
             element:
                 <>
                     <FilmCardList fcards = {fcards}
                                  cinema_cards={cards}
                                   setSelectedMovie={setMovie}
                     ></FilmCardList>
-                    <Link to="/places/">
+                    <Link to="/ticketbooking/places/">
                         <ShortInfoBtn cinema_card={cinemaCartItem}
                                       movie={selectedMovie}
                         >
@@ -226,7 +226,7 @@ function App() {
                 </>
         },
         {
-            path: "/payment",
+            path: "/ticketbooking/payment",
             element:
                 <>
                     <div className='filmBlockAll'>
@@ -241,7 +241,7 @@ function App() {
                 </>
         },
         {
-            path: "/places",
+            path: "/ticketbooking/places",
             element:
                 <>
                     <div className='filmBlockAll'>
