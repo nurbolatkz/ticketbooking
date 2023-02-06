@@ -4,9 +4,9 @@ const FilmTimes = ({filmTime, film_card, setSelectedOption}) =>{
 
     function setShowShortInfo(event) {
         const filmTimeBtn = event.target;
-        const filmtTimeContainer = filmTimeBtn.parentNode.parentNode;
+        const movieCardsContainer = document.getElementById('movieCardsContainer');
 
-        let currentActiveBtn = filmtTimeContainer.getElementsByClassName("active-time-btn");
+        let currentActiveBtn = movieCardsContainer.getElementsByClassName("active-time-btn");
         if (currentActiveBtn.length > 0) {
             currentActiveBtn[0].className = "timebutton";
             filmTimeBtn.classList.add("active-time-btn");
@@ -43,7 +43,7 @@ const CinemaInfo = (props) => {
 
     return (
             <div class="film-card">
-                <div class="film-card-body">
+                <div id="movieCardsContainer" class="film-card-body">
                     <div className='film-info'>
                         <h5 className='film-name'>{props.film_card.film_name}</h5>
                         <div className='oneline'>

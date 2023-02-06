@@ -1,15 +1,15 @@
 import React from 'react';
 
-const AllInfo = ({props}) => {
+const AllInfo = (props) => {
     return (
         <div className='cinemaPlaceBody'>
             <div className='selectedElements'>
                 <div className='leftSide'>
-                    <span>5 ряд 10 место</span><br></br>
-                    <span>Взрослый</span>
+                    <span>{props.place_detail.rowId} ряд {props.place_detail.colId} место</span><br></br>
+                    <span>{props.place_detail.type}</span>
                 </div>
                 <div className='rightSide'>
-                    <span >2000тг</span>
+                    <span >{props.place_detail.price}</span>
                 </div>
             </div>
         </div>
