@@ -720,35 +720,115 @@ body {
 
 
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
-.snackBlockAll{
-    background-color: white;
-    margin-top: 15px;
-}
-.snaksTitle{
-    padding: 20px;
-    color: #E3231E;
-    font-weight: 600;
-}
-.snack-container{
+/* MOBILE */
+    .snack-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .snack-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--primary-color);
+        padding: 0.5rem 0.3rem;
+        margin: 13px 10px;
+        position: relative;
+        border-radius: 5px;
+    }
+    .img-container {
+        text-align: center;
+        width: 115px;
+        margin: 0 auto;
+    }
+    .img-container img {
+        width: 70px;
+        height: 90px;
+        object-fit: cover;
+    }
+    .snack-card-title {
+        font-weight: 400;
+        text-align: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-size: 18px;
+        line-height: 20px;
+        color: #000000;
+        display: block;
+    }  
+    .snack-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 150px;
+        height: 200px;
+        border: 2px solid var(--primary-color);
+        padding: 0.5rem 0.3rem;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 50px;
+        position: relative;
+        border-radius: 5px;
+    }
+    .select-btn { 
+        font-size: 16px;
+        padding-block: 8px;
+        padding-inline: 15px;
+    }
+    .btn-container button {
+        width: 35px;
+        font-size: 28px;
+    }
+    .snack-card-counter{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+.snack-card-counter{
+    position: absolute; 
+    top: 5%;
+    right: 2%;
+    background-color: rgb(250, 183, 59);
+    border-radius: 50%;
+    transform: translate(20px, -20px) scale(1);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid rgb(250, 183, 59);
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: scaleanimation 1s ease infinite;
+    opacity: 0.8;
+}
+.btn-container button{
+    border: transparent;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 .snack-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 150px;
-    height: 250px;
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem 0.3rem;
-    margin: 13px 10px;
-    position: relative;
-    border-radius: 5px;
 }
-
+.snaksTitle{
+    padding: 20px;
+    color: #E3231E;
+    font-weight: 600;
+}   
+.snackBlockAll{
+    background-color: white;
+    margin-top: 15px;
+}
 .snack-card-title {
-    font-weight: 400;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -756,30 +836,21 @@ body {
     font-weight: bold;
 }
 .select-btn {
-    display: flex;
-    margin-left: 25%;
-}
-.img-container {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-}
-
-.img-container img {
-    width: 100%;
-    object-fit: cover;
+    margin-left: 15%;
+    border: none;
+    background: #E3231E;
+    display:block;
+    color:#F8F8F8;
+    border-radius: 8px;
 }
 
 .btn-container {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
 .snack-card-price {
     text-align: center;
     display: inline-block;
-
 }
 
 @media screen and (min-width: 1200px){
@@ -805,110 +876,19 @@ body {
 
 }
 /* ------------------------------------- snack card desktop screen ---------------------------------------------------------------------- */
-.snack-container{
-    padding:0;
-    margin:0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.snack-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 150px;
-    height: 250px;
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem 0.3rem;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-bottom: 50px;
-    position: relative;
-    border-radius: 5px;
-}
-
-.snack-card-title {
-    font-weight: 400;
-    text-align: center;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 24px;
-    color: #000000;
-    display: block;
-}
-
-.select-btn {
-    font-size: 16px;
-    padding: 10px;
-    color:#F8F8F8;
-    border: none;
-    background: #E3231E;
-    display:block;
-    margin-top: -5%;
-    margin-left: 20%;
-    border-radius: 8px;
-}
-.img-container {
-    border-radius: 0px;
-    margin: 20px auto;
-}
-
-.img-container img {
-    height: 133px;
-    width: 120px;
-}
 
 .btn-container {
     margin: 0;
     display: flex;
     align-items: space-between;
 }
-.btn-container button {
-    height: 46px;
-    width: 60px;
-    padding:0;
-    border: transparent;
-    border-radius: 15px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 45px;
-    text-align: center;
 
-    color: #FFFFFF;
-
-}
 .snack-card-price {
     text-align: center;
     display: grid;
 }
 
-.snack-card-counter{
-    position: absolute;
 
-    top: 5%;
-    right: 2%;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(227, 112, 30);
-    border-radius: 50%;
-    transform: translate(20px, -20px) scale(1);
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    border: 2px solid rgb(227, 112, 30);
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    animation: scaleanimation 1s ease infinite;
-    opacity: 0.8;
-}
 
 @keyframes scaleanimation {
     to {
