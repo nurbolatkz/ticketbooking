@@ -22,6 +22,8 @@ import SeatPrice from './components/SeatPrice';
 import './styles/App.css';
 
 const telegram = window.Telegram.WebApp;
+telegram.expand();
+
 function App() {
 
 
@@ -236,7 +238,7 @@ function App() {
                         <AllInfo place_detail={selectedPlace}></AllInfo>
                     </div>
                     <div className='snackBlockAll'>
-                        <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem}></SnackPage>
+                        <SnackPage snack_cards={snacks} addSnack={addItem} removeSnack={removeItem} data={ticketDetails}></SnackPage>
                     </div>
                 </>
         },
