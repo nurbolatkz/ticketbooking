@@ -2,7 +2,6 @@ import React from 'react';
 import CinemaInfo from "./CinemaInfo";
 import { useParams} from 'react-router-dom';
 
-
 const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
 
     const {cinemaId} = useParams();
@@ -19,7 +18,7 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
 
     for(let i = 0; i<fcards.length; i++){
   
-        if(fcards[i].id == cinemaId){
+        if(fcards[i].id === Number(cinemaId)){
             movies = fcards[i].movies
         }
     }
@@ -31,6 +30,7 @@ const FilmCardList = ({fcards, cinema_cards, setSelectedMovie}) => {
         </h1>
         )
     }
+
 
     let cardFilterByTwoElements = [];
     let counter = 0;
