@@ -5,6 +5,7 @@ import {
     Link
 } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {useTelegram} from "./hooks/useTelegram";
 /* ------ import component ------ */
 import CinemaCardList from "./components/CinemaCardList";
 import DateOption from "./components/DateOption";
@@ -24,7 +25,11 @@ import './styles/App.css';
 //const telegram = window.Telegram.WebApp;
 
 function App() {
+    const {onToggleButton, tg} = useTelegram();
 
+    useEffect(() => {
+        tg.ready();
+    }, [])
 
     const [cards, setCards] = useState([
 
