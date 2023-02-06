@@ -21,7 +21,7 @@ import SeatPrice from './components/SeatPrice';
 /* ------ import css ------ */
 import './styles/App.css';
 
-
+const telegram = window.Telegram.WebApp;
 function App() {
 
 
