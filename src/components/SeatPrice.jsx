@@ -27,7 +27,7 @@ const SeatPrice = (props) => {
         <div className='seatPriceBody'>
             <div className='seatPriceTitle'>
 
-                <Link to={`/cinemas/${props.selectedMovie.id}/movies`}>
+                <Link to={`/ticketbooking/cinemas/${props.selectedMovie.id}/movies`}>
                     &larr;
                 </Link>
 

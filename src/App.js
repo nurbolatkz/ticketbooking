@@ -22,7 +22,6 @@ import SeatPrice from './components/SeatPrice';
 import './styles/App.css';
 
 const telegram = window.Telegram.WebApp;
-telegram.expand();
 
 function App() {
 
@@ -36,6 +35,9 @@ function App() {
         {id:5, address: 'KINO5', img_src: 'logo.jpg'}
 
     ])
+    useEffect(() => {
+        telegram.ready();
+    });
 
     /*
     const [cards, setCards] = useState([])
